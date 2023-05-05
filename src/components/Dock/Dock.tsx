@@ -36,6 +36,12 @@ const Dock = () => {
         dispatch({type: 'weather/OPEN'});
     
     };
+    const openVSCode = (e: React.MouseEvent<HTMLDivElement>) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dispatch({type: 'vscode/OPEN'});
+    
+    };
 
     // const openFinder = (e: React.MouseEvent<HTMLDivElement>) => {
     //     e.preventDefault();
@@ -199,6 +205,7 @@ const Dock = () => {
                 id='9'
                 onMouseEnter = {() => {}}
                 onMouseLeave = {() => {}}
+                onClick={openVSCode}
             >
                 <div className='tool-tip'>VS Code</div>
                 <img 

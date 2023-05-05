@@ -9,7 +9,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    left: -144px;
+    left: -155px;
     top: 28px;
     box-shadow: 0px 0px 4px #1c1c1c;
     transition: 0.4s all;
@@ -123,6 +123,46 @@
 
         .yellowy {
             background-color: yellow;
+        }
+    }
+}
+
+.wallpaper-container{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: flex-start;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    cursor: pointer;
+
+    *{
+        pointer-events: none;
+    }
+
+    .preview{
+        border: none;
+        border-radius: 8px;
+        height: 100px;
+        width: 150px;
+    }
+
+    .desc-container{
+        padding-top: 3px;
+        padding-left: 3px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: beige;
+
+        h2{
+            font-size: 16px;
+
+        }
+
+        h3{
+            margin-top: 1px;
+            font-size: 14px;
         }
     }
 }

@@ -9,6 +9,13 @@ import { ReactComponent as Notch } from "../../resources/images/svg/notch.svg";
 const SettingsDropdown = () => {
   const [state, dispatch] = useContext(store);
 
+  const openWallpaper = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dispatch({type: 'wallpaper/OPEN'});
+
+};
+
   return (
     <div
       className="settings-dropdown set"
@@ -50,7 +57,7 @@ const SettingsDropdown = () => {
           >
             { }
           </div>
-          <div 
+          <div
             className='color greeny set'
             id='green'
           >
@@ -66,7 +73,7 @@ const SettingsDropdown = () => {
             className='color pinky set'
             id='pink'
           >
-            {}
+            { }
           </div>
           <div
             className='color blacky set'
@@ -97,20 +104,16 @@ const SettingsDropdown = () => {
 
       <section
         className='wallpaper-container'
+        id='opener'
+        onClick={openWallpaper}
       >
-        <h3>Dynamic Wallpaper</h3>
-      </section>
-
-      <section className='notch-container set'>
-        <button
-          className='notch-btn set'
-        >
-
-        <Notch 
-          fill="black"
-        />
-        </button>
-        Notch
+        <img className='preview' src={`${state.settings.wallpaper.name}`} alt="wallpaper" />
+        <div className='desc-container'>
+        <h2 className='title'>
+          Wallpaper
+        </h2>
+        <h3 className='type'>Dynamic Wallpaper</h3>
+        </div>
       </section>
     </div>
   )

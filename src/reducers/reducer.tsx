@@ -72,16 +72,18 @@ const reducer = (state = sampleStore, action: AnyAction) => {
             };
             return updateWallpaper;
 
-        // case "vscode/OPEN":
-        //     // eslint-disable-next-line no-case-declarations
-        //     const openVSCode = {
-        //         ...state,
-        //         weatherWindow: {
-        //             ...state.
-        //         },
-        //     };
+        case "vscode/OPEN":
+            // eslint-disable-next-line no-case-declarations
+            const openVSCode = {
+                ...state,
+                vscodeWindow: {
+                    vscodeClose: false,
+                    vscodeOpen: false,
+                    vscodeMinimize: false,
+                },
+            };
 
-        //     return openVSCode;
+            return openVSCode;
 
         case "vscode/CLOSE":
             // eslint-disable-next-line no-case-declarations
