@@ -1,0 +1,128 @@
+.settings-dropdown {
+    background-color: hsla(240%,3%,11%,0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 16px;
+    height: 360px;
+    width: 312px;
+    box-sizing: border-box;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: -144px;
+    top: 28px;
+    box-shadow: 0px 0px 4px #1c1c1c;
+    transition: 0.4s all;
+    padding: 11px 11px;
+    gap: 12px;
+
+    .functions{
+        display: flex;
+        gap: 12px;
+        justify-content: space-between;
+
+        .func {
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 10px;
+            background-color: hsla(240%,3%,11%,0.4);
+            color: white;
+            font-family: "SF Bold";
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 19px 16px 16px;
+            cursor: pointer;
+            box-shadow: 0px 0px 2px black;
+        }
+        .airdrop-btn{
+            *{
+                margin-bottom: 2px;
+                pointer-events: none;
+            }
+        }
+        button {
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            transition: 0.25s all;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 8px;
+            cursor: pointer;
+
+            *{
+                height: 17px;
+                width: 17px;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+.sys-colors {
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    background-color: hsla(240%,3%,11%,0.4);
+    color: white;
+    font-family: 'SF Bold';
+    padding: 9px 11px 11px 11px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start;
+    box-shadow: 0px 0px 2px black;
+
+    .colors{
+        display: flex;
+        gap: 16px;
+        margin-left: 1px;
+        margin-top: 13px;
+
+        .color{
+            border-radius: 50%;
+            height: 20px;
+            width: 25px;
+            border: 2px transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .orangey {
+            background-color: orange;
+        }
+
+        .greeny {
+            background-color: lightgreen;
+        }
+
+        .bluey {
+            background-color: lightblue;
+        }
+
+        .pinky {
+            background-color: lightpink;
+        }
+
+        .blacky {
+            background-color: black;
+        }
+
+        .whitey {
+            background-color: white;
+        }
+
+        .greyy {
+            background-color: grey;
+        }
+
+        .yellowy {
+            background-color: yellow;
+        }
+    }
+}
