@@ -1,8 +1,8 @@
 
 
-:root {
-    --bg-image: url("../../resources/images/catalina.jpg");
-  }
+// :root {
+//     --bg-image: url("../../resources/images/catalina.jpg");
+//   }
     
 *{
     user-select: none;
@@ -17,7 +17,7 @@
     width: 100vw;
     -webkit-transition: background-image 0.3s ease-in-out;
     transition: background-image 0.3s ease-in-out;
-    background-image: var(--bg-image);
+    // background-image: var(--bg-image);
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;

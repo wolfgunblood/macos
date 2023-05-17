@@ -1,4 +1,6 @@
 import storeType from "../../types/store";
+import img from '../../assets/wallpapers/46.jpg';
+
 const sampleStore : storeType ={
     weather: {
         current: null,
@@ -24,7 +26,7 @@ const sampleStore : storeType ={
             open: true,
             src: null,
             preview: null,
-            name: "/src/resources/images/lake.jpg",
+            name: img,
             surname: null,
         },
     },

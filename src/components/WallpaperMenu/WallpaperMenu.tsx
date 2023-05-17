@@ -47,6 +47,7 @@ const WallpaperMenu = () => {
     const [state, dispatch] = useContext(store);
 
     // const [isClose, setIsClose] = useState(false);
+    // const [isChange, setIsChange] = useState(false);
 
     const wallPaper2 = [
         [krypt_demise, "Kryptonian Demise"],
@@ -90,7 +91,9 @@ const WallpaperMenu = () => {
         e.preventDefault();
 
         // console.log(e);
-        // console.log(wally);
+        console.log(wally[0]);
+        // const element = document.getElementById('page') as HTMLDivElement;
+        // element.style.backgroundImage = `url(${wally[0]}})`;
 
         dispatch({
             type: "wallpaper/CHANGE",
@@ -145,6 +148,11 @@ const WallpaperMenu = () => {
 
         }
     }, [state.float.wallpaperBoard, state.float.weatherBoard]);
+
+    // useEffect(() => {
+    //     const element = document.getElementById('page') as HTMLDivElement;
+    //     element.style.backgroundImage = `url(${catalina})`;
+    //   }, []);
 
 
     return (

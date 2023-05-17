@@ -1,9 +1,10 @@
-import React, { useContext} from 'react';
+import React, { useContext, useState, useEffect} from 'react';
 import { store } from '../../App';
 import "./Page.scss";
 import openContextMenu from '../../utils/helpers/openContextMenu';
 import checkDropdown from '../../utils/helpers/checkDropdown';
 import checkSettings from '../../utils/helpers/checkSettings';
+// import img from '../../assets/44.jpg';
 
 
 const Page = ({children} : any) => {
@@ -34,8 +35,13 @@ const Page = ({children} : any) => {
 
   };
   
+  const [backgroundImage, setBackgroundImage] = useState(state.settings.wallpaper.name);
+
+  useEffect(() => {
+    setBackgroundImage(state.settings.wallpaper.name);
+  }, [state.settings.wallpaper.name]);
   // const lake  = "lake";
-  document.documentElement.style.setProperty('--bg-image', `url("${state.settings.wallpaper.name}")`);
+  // document.documentElement.style.setProperty('--bg-image', `url("${state.settings.wallpaper.name}")`);
    
   
   return (
@@ -44,7 +50,7 @@ const Page = ({children} : any) => {
     id='page'
     onContextMenu={openContextMenu}
     onClick={handleLeftClick}
-    
+    style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       {/* {console.log(children)} */}
       {/* {console.log(state.settings.wallpaper.name)} */}

@@ -6,6 +6,8 @@ import WeatherTopLeft from '../WeatherTopLeft/WeatherTopLeft';
 import WeatherTopRight from '../WeatherTopRight/WeatherTopRight';
 import WeatherBottom from '../WeatherBottom/WeatherBottom';
 import weather from '../../types/weather';
+import backgroundImage from '../../assets/44.jpg';
+
 
 
 const weatherApiKey = import.meta.env.VITE_API_KEY;
@@ -56,6 +58,12 @@ const Weatherboard = () => {
     }
   }, [state.weatherWindow.weatherStretch]);
 
+  useEffect(() => {
+    const element = document.getElementById('weather-app') as HTMLDivElement;
+    element.style.backgroundImage = `linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url(${backgroundImage})`;
+  }, []);
+
+
   return (
     <div className='weather-app' id="weather-app">
       <div className='top'>
@@ -67,7 +75,7 @@ const Weatherboard = () => {
           />
         </div>
         <div className='right'>
-          <WeatherTopRight 
+          <WeatherTopRight
             weatherData={weatherData}
           />
         </div>
