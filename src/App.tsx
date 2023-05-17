@@ -11,6 +11,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import reducer from './reducers/reducer';
 import sampleStore from './utils/keys/sampleStore.ts';
 import ContextMenu from './components/ContextMenu/ContextMenu.tsx';
+// import storeType from './types/store.ts';
 
 
 // eslint-disable-next-line react-refresh/only-export-components

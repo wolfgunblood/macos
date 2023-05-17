@@ -1,5 +1,5 @@
-
-const sampleStore ={
+import storeType from "../../types/store";
+const sampleStore : storeType ={
     weather: {
         current: null,
         forecast: null,

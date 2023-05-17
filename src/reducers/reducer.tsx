@@ -1,9 +1,10 @@
 import { AnyAction } from "@reduxjs/toolkit";
 import sampleStore from '../utils/keys/sampleStore';
 import getDate from "../utils/helpers/getDate";
+import storeType from "../types/store";
 
 
-const reducer = (state = sampleStore, action: AnyAction) => {
+const reducer = (state: storeType = sampleStore, action: AnyAction) => {
 
     switch (action.type) {
         case "section/SELECT":
