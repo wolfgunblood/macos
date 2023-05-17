@@ -1,18 +1,13 @@
-import React,{ MouseEvent, useContext, useEffect, useState} from 'react';
+import React,{ useContext, useEffect, useState} from 'react';
 import { store } from '../../App';
 import './Dock.scss';
 import { finder,
-        applemusic,
-        arcade,
         calculator,
         calendar,
         discord,
         github,
-        netflix,
         photos,
-        scalable,
         spotify,
-        twitter,
         vscode,
         weather
 } from '../../resources';
