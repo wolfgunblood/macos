@@ -37,7 +37,7 @@ const App = () => {
             <WallpaperMenu />
             {/* <VSCode /> */}
             <ContextMenu />
-            <Finder />
+            {/* <Finder /> */}
           </Page>
             
         </StoreProvider>
