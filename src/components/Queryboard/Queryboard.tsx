@@ -1,10 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { store } from '../../App';
 
 import './Queryboard.scss';
 import QueryBoardLinks from '../QueryBoardLinks/QueryBoardLinks';
 import InputFields from '../InputFields/InputFields';
-import Draggable from 'react-draggable';
 
 const Queryboard = () => {
 
