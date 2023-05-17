@@ -5,7 +5,7 @@ import Refresh from '../../resources/images/refresh.png';
 const InputFields = () => {
   const [newCity, setNewCity] = useState('');
 
-  const [state, dispatch] = useContext(store);
+  const [_state, dispatch] = useContext(store);
 
   const changeCity = (e:  React.FormEvent<HTMLElement>) => {
     e.preventDefault();

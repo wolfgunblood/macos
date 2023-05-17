@@ -7,7 +7,7 @@ import InputFields from '../InputFields/InputFields';
 
 const Queryboard = () => {
 
-  const [state, dispatch] = useContext(store);
+  const [_state, dispatch] = useContext(store);
 
   const floatWindow = (e: React.MouseEvent<HTMLElement>) => {
 

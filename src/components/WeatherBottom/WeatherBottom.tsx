@@ -31,7 +31,7 @@ const WeatherBottom = () => {
   const [weatherData, setWeatherData] = useState(sampleHourly);
   const [counter, setCounter] = useState(1);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [state, dispatch] = useContext(store);
+  const [state, _dispatch] = useContext(store);
 
   const fetchWeatherData = async (city: string) => {
     try {

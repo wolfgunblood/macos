@@ -7,7 +7,7 @@ import Draggable from 'react-draggable';
 
 const Weather = () => {
 
-  const [ state, dispatch ] = useContext(store);
+  const [ state, _dispatch ] = useContext(store);
 
   useEffect(() => {
     const weatherWindow = document.getElementById("weather-window");

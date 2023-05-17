@@ -12,7 +12,7 @@ const weatherApiKey = import.meta.env.VITE_API_KEY;
 
 const Weatherboard = () => {
   const [weatherData, setWeatherData] = useState(sampleWeatherData);
-  const [state, dispatch] = useContext(store);
+  const [state, _dispatch] = useContext(store);
 
   const fetchWeatherData = async (city: string) => {
     try {

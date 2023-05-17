@@ -9,7 +9,7 @@ import WindowBody from '../WindowBody/WindowBody';
 import { finder } from '../../resources';
 
 const Finder = () => {
-    const [ state, dispatch ] = useContext(store);
+    const [ state, _dispatch ] = useContext(store);
     const [ isClose, setIsClose ] = useState(true);
     
     const finderName = "Finder";

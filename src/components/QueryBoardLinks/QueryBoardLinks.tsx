@@ -10,7 +10,7 @@ import { FiGithub } from  "react-icons/fi";
 
 const QueryBoardLinks = () => {
 
-  const [  state,dispatch ] = useContext(store);
+  const [ _state,dispatch ] = useContext(store);
 
   const closeWindow = (e : React.MouseEvent<HTMLElement>) => {
         
