@@ -1,10 +1,12 @@
-import { AnyAction } from "@reduxjs/toolkit";
+// import { AnyAction } from "@reduxjs/toolkit";
 import sampleStore from '../utils/keys/sampleStore';
 import getDate from "../utils/helpers/getDate";
 import storeType from "../types/store";
+import { Reducer, AnyAction } from '@reduxjs/toolkit';
 
 
-const reducer = (state: storeType = sampleStore, action: AnyAction) => {
+
+const reducer: Reducer<storeType, AnyAction> = (state = sampleStore, action) => {
 
     switch (action.type) {
         case "section/SELECT":
@@ -182,7 +184,7 @@ const reducer = (state: storeType = sampleStore, action: AnyAction) => {
                     wallpaperClose: false,
                     wallpaperOpen: true,
                     wallpaperMinimize: false,
-                    wallpaperStrecth: false,
+                    wallpaperStretch: false,
                 },
             };
             return openWallpaper;
