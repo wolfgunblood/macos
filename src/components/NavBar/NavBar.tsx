@@ -3,8 +3,6 @@ import { store } from "../../App";
 import "./NavBar.scss";
 import DropdownContent from '../DropdownContent/DropdownContent';
 import SettingsDropdown from '../SettingsDropdown/SettingsDropdown';
-import getDate from '../../utils/helpers/getDate';
-import { AnimatePresence, motion } from 'framer-motion';
 import { GiToggles } from "react-icons/gi";
 import { IconContext } from "react-icons";
 import { AiOutlineApple } from  "react-icons/ai";
@@ -40,7 +38,7 @@ const NavBar = () => {
     dispatch({
       type: "date/SET",
     });
-  }, []);
+  }, [dispatch]);
 
   setInterval(() => {
     dispatch({
