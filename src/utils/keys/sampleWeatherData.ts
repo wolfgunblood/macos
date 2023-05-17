@@ -17,6 +17,6 @@ const sampleWeatherData ={
         deg:  "50",
     },
 
-}
+};
 
 export default sampleWeatherData;

@@ -5,13 +5,14 @@ import sampleWeatherData from '../../utils/keys/sampleWeatherData';
 import WeatherTopLeft from '../WeatherTopLeft/WeatherTopLeft';
 import WeatherTopRight from '../WeatherTopRight/WeatherTopRight';
 import WeatherBottom from '../WeatherBottom/WeatherBottom';
+import weather from '../../types/weather';
 
 
 const weatherApiKey = import.meta.env.VITE_API_KEY;
 
 
 const Weatherboard = () => {
-  const [weatherData, setWeatherData] = useState(sampleWeatherData);
+  const [weatherData, setWeatherData] = useState<weather>(sampleWeatherData);
   const [state, _dispatch] = useContext(store);
 
   const fetchWeatherData = async (city: string) => {

@@ -24,7 +24,7 @@ import {
 import { RiMoonFoggyLine as Mist } from "react-icons/ri";
 
 
-const WeatherTopLeft = ({ weatherData }) => {
+const WeatherTopLeft = ({ weatherData } :any) => {
   const { name, main, weather } = weatherData;
   const { temp } = main;
 

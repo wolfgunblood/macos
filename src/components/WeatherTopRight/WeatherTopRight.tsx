@@ -9,9 +9,10 @@ import { BsThermometerSun as Thermo } from "react-icons/bs"
 import { FiWind as Wind } from "react-icons/fi";
 import { WiHumidity as Humidity } from "react-icons/wi";
 import { IconContext } from "react-icons";
+// import weather from '../../types/weather';
 
 
-const WeatherTopRight = ({ weatherData }) => {
+const WeatherTopRight = ({ weatherData } :any) => {
     const { main, wind } = weatherData;
     const { feels_like, humidity } = main;
     return (
