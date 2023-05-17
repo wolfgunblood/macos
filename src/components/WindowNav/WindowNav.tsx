@@ -3,12 +3,12 @@ import './WindowNav.scss';
 import { GrFormClose, GrFormSubtract } from "react-icons/gr";
 import { CgExpand } from "react-icons/cg";
 
-const WindowNav = ({ handleName, name, isClose, setIsClose }) => {
+const WindowNav = ({ handleName, name, setIsClose } :any) => {
     // console.log(handleName);
     const closeWindow = (e : React.MouseEvent<HTMLElement>) => {
         e.stopPropagation();
 
-        setIsClose((prev) => !prev);
+        setIsClose((prev :any) => !prev);
     }
     return (
         <section className='handle1' id={`${handleName}`}>

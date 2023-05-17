@@ -1,6 +1,6 @@
 import './WindowBody.scss';
 
-const WindowBody = ({ handleIcon }) => {
+const WindowBody = ({ handleIcon } :any) => {
     return (
         <section className='window-body'>
                 <h4>Sorry Nothing Her Yet !!!</h4>
