@@ -1,8 +1,8 @@
-import React, { createContext, useReducer, useEffect } from 'react';
+import { createContext, useReducer } from 'react';
 import NavBar from './components/NavBar/NavBar';
 import Page from './components/Page/Page';
 import Dock from './components/Dock/Dock.tsx';
-import VSCode from './components/VSCode/VSCode.tsx';
+// import VSCode from './components/VSCode/VSCode.tsx';
 import WallpaperMenu from './components/WallpaperMenu/WallpaperMenu.tsx';
 import Weather from './components/Weather/Weather.tsx';
 import Finder from './components/Finder/Finder.tsx';
@@ -11,9 +11,9 @@ import { ChakraProvider } from '@chakra-ui/react';
 import reducer from './reducers/reducer';
 import sampleStore from './utils/keys/sampleStore.ts';
 import ContextMenu from './components/ContextMenu/ContextMenu.tsx';
-import Draggable from 'react-draggable';
 
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const store = createContext<any>(null);
 
 const StoreProvider = ({ children }: any) => (
