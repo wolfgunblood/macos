@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { store } from '../../App';
 import './Finder.scss';
 import Draggable from 'react-draggable';
