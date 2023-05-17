@@ -1,21 +1,6 @@
 
-import React, { useState, useEffect, useContext } from 'react';
-// import {ReactComponent as ArrowLeft } from '../../assets/SVG/arrow_left.svg'
-// import { ReactComponent as ArrowLeft } from '../../assets/SVG/arrow_left.svg';
-// import { ReactComponent as ArrowRight } from '../../assets/SVG/arrow_right.svg';
-// import { ReactComponent as Cloud } from '../../assets/SVG/cloud.svg';
-// import { ReactComponent as Humidity } from '../../assets/SVG/humidity.svg';
-// import { ReactComponent as CloudDay } from '../../assets/SVG/cloudy-day.svg';
-// import { ReactComponent as CloudNight } from '../../assets/SVG/cloudy-night.svg';
-// import { ReactComponent as Lightning } from '../../assets/SVG/lightning.svg';
-// import { ReactComponent as MapPin } from '../../assets/SVG/map-pin.svg';
-// import { ReactComponent as Mist } from '../../assets/SVG/mist.svg';
-// import { ReactComponent as Moon } from '../../assets/SVG/moon.svg';
-// import { ReactComponent as Rainy } from '../../assets/SVG/rainy.svg';
-// import { ReactComponent as Snow } from '../../assets/SVG/snow.svg';
-// import { ReactComponent as Sun } from '../../assets/SVG/sun.svg';
-// import { ReactComponent as Thermo } from '../../assets/SVG/thermo.svg';
-// import { ReactComponent as Wind } from '../../assets/SVG/wind.svg';
+import { useState, useEffect, useContext } from 'react';
+
 import { 
   BsArrowLeftCircle as ArrowLeft,
   BsArrowRightCircle as ArrowRight,
@@ -33,7 +18,6 @@ import {
   BsCloudDrizzle as Rainy,
   BsCloudSnow as Snow,
 } from 'react-icons/bs';
-import { IconContext } from "react-icons";
 import { RiMoonFoggyLine as Mist } from "react-icons/ri";
 import { store } from '../../App';
 
@@ -46,6 +30,7 @@ const weatherApiKey = import.meta.env.VITE_API_KEY;
 const WeatherBottom = () => {
   const [weatherData, setWeatherData] = useState(sampleHourly);
   const [counter, setCounter] = useState(1);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [state, dispatch] = useContext(store);
 
   const fetchWeatherData = async (city: string) => {
@@ -71,9 +56,9 @@ const WeatherBottom = () => {
   useEffect(() => {
     fetchWeatherData(state.city);
     // fetchWeatherData('Delhi');
-    console.log(weatherData);
+    // console.log(weatherData);
     // fetchWeatherData('New York');
-  }, [state.city])
+  }, [state.city, weatherData])
   const icons = {
     '01d': <Sun size={30} />,
     '01n': <Moon size={30} />,
@@ -94,16 +79,7 @@ const WeatherBottom = () => {
     '50d': <Mist size={30} />,
     '50n': <Mist size={30} />,
   };
-  const day = [
-    { day: 'Sunday', time: '10:00', tempHigh: '18', tempLow: '15', icon: '01d' },
-    { day: 'Monday', time: '10:00', tempHigh: '18', tempLow: '15', icon: '01d' },
-    { day: 'Tuesday', time: '10:00', tempHigh: '18', tempLow: '15', icon: '01d' },
-    { day: 'Wednesday', time: '10:00', tempHigh: '18', tempLow: '15', icon: '01d' },
-    { day: 'Thursday', time: '10:00', tempHigh: '18', tempLow: '15', icon: '01d' },
-    { day: 'Friday', time: '10:00', tempHigh: '18', tempLow: '15', icon: '01d' },
-    { day: 'Saturday', time: '10:00', tempHigh: '18', tempLow: '15', icon: '01d' },
-    { day: 'Sunday', time: '10:00', tempHigh: '18', tempLow: '15', icon: '01d' },
-  ];
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
   const hourly = [
     { time: '12:00 am', tempHigh: '18', tempLow: '15', icon: '01d' },

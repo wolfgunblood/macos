@@ -1,4 +1,3 @@
-import { vscode } from "../../resources";
 
 const sampleStore ={
     weather: {

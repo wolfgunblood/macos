@@ -13,6 +13,7 @@ const Weather = () => {
     const weatherWindow = document.getElementById("weather-window");
     if (state.float.weatherBoard && weatherWindow) {
       weatherWindow.style.zIndex = "8";
+      
     }else{
       if(weatherWindow)
       weatherWindow.style.zIndex = "3";
