@@ -110,7 +110,11 @@ const WeatherBottom = () => {
     console.log(counter);
 
   }
-
+  const fore= [
+    { start: 0, end: 5 },
+    { start: 6, end: 11 },
+    { start: 12, end: 17 },
+  ];
 
   return (
     <div className='forecast'>
@@ -147,60 +151,20 @@ const WeatherBottom = () => {
           
         ))}
     </div> */}
-      {counter === 1 &&
-
-        <div className='forecast-hourly-container'>
-          {weatherData.list.length > 5 && weatherData.list.slice(0, 5).map((item, index) => (
-            <div className='forecast-hourly' key={index} id={`current-hour-plus-${index + 1}`}>
-              {/* {console.log(currrentTime(item.dt_txt))} */}
-              <div className='forecast-hourly__time'>{currrentTime(item.dt_txt)}</div>
-              <div className='forecast-hourly__temperature'>
-                <div className='forecast-hourly__temperature-high'>{item.main.temp_max}°C</div>
-                {/* <div className='forecast-hourly__temperature-low'>{item.main.temp_min}°C</div> */}
+     
+          <div className='forecast-hourly-container' key={counter}>
+            {weatherData.list.length > 5 && weatherData.list.slice(fore[counter - 1].start, fore[counter - 1].end).map((item, index) => (
+              <div className='forecast-hourly' key={index} id={`current-hour-plus-${index + 1}`}>
+                <div className='forecast-hourly__time'>{currrentTime(item.dt_txt)}</div>
+                <div className='forecast-hourly__temperature'>
+                  <div className='forecast-hourly__temperature-high'>{item.main.temp_max}°C</div>
+                </div>
+                <div className='forecast-hourly__icon'>
+                  {icons[item.weather[0].icon as keyof typeof icons]}
+                </div>
               </div>
-              <div className='forecast-hourly__icon'>
-                {icons[item.weather[0].icon as keyof typeof icons]}
-              </div>
-            </div>
-          ))}
-        </div>
-      }
-      {counter === 2 &&
-
-        <div className='forecast-hourly-container'>
-          {weatherData.list.length > 5 && weatherData.list.slice(6, 11).map((item, index) => (
-            <div className='forecast-hourly' key={index} id={`current-hour-plus-${index + 1}`}>
-              {/* {console.log(currrentTime(item.dt_txt))} */}
-              <div className='forecast-hourly__time'>{currrentTime(item.dt_txt)}</div>
-              <div className='forecast-hourly__temperature'>
-                <div className='forecast-hourly__temperature-high'>{item.main.temp_max}°C</div>
-                {/* <div className='forecast-hourly__temperature-low'>{item.main.temp_min}°C</div> */}
-              </div>
-              <div className='forecast-hourly__icon'>
-                {icons[item.weather[0].icon as keyof typeof icons]}
-              </div>
-            </div>
-          ))}
-        </div>
-      }
-      {counter === 3 &&
-
-        <div className='forecast-hourly-container'>
-          {weatherData.list.length > 5 && weatherData.list.slice(12, 17).map((item, index) => (
-            <div className='forecast-hourly' key={index} id={`current-hour-plus-${index + 1}`}>
-              {/* {console.log(currrentTime(item.dt_txt))} */}
-              <div className='forecast-hourly__time'>{currrentTime(item.dt_txt)}</div>
-              <div className='forecast-hourly__temperature'>
-                <div className='forecast-hourly__temperature-high'>{item.main.temp_max}°C</div>
-                {/* <div className='forecast-hourly__temperature-low'>{item.main.temp_min}°C</div> */}
-              </div>
-              <div className='forecast-hourly__icon'>
-                {icons[item.weather[0].icon as keyof typeof icons]}
-              </div>
-            </div>
-          ))}
-        </div>
-      }
+            ))}
+          </div>
     </div >
   )
 }
