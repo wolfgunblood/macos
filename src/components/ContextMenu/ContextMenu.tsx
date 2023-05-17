@@ -1,12 +1,6 @@
-import React,{ useContext } from 'react';
 import './ContextMenu.scss';
-import { store } from '../../App';
-
-
-
 
 const ContextMenu = () => {
-    const [state, dispatch] = useContext(store);
   return (
     <div className='context-menu' id='context-menu'>
         <div className='context-item first'>New Folder</div>
