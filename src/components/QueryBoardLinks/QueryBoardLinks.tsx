@@ -1,7 +1,6 @@
 import React,{ useContext} from 'react';
-import './QueryBoardLinks.scss';
 import { store } from '../../App';
-
+import './QueryBoardlinks.scss';
 import { GrFormClose, GrFormSubtract } from "react-icons/gr";
 import { CgExpand } from "react-icons/cg";
 import { FiGithub } from  "react-icons/fi";
