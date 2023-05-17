@@ -7,6 +7,7 @@ import getDate from '../../utils/helpers/getDate';
 import { AnimatePresence, motion } from 'framer-motion';
 import { GiToggles } from "react-icons/gi";
 import { IconContext } from "react-icons";
+import { AiOutlineApple } from  "react-icons/ai";
 
 const NavBar = () => {
 
@@ -14,7 +15,7 @@ const NavBar = () => {
 
   const dispatchAction = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
-
+    console.log("apple icon selected")
     const selectedSection = e.target as HTMLElement;
     if (selectedSection.classList.contains("dd")) { return; }
     dispatch({
@@ -47,13 +48,17 @@ const NavBar = () => {
     });
   }, 60000);
 
+  // const appleLogo = () => {
+  //   dispatchAction();
+  // }
+
   return (
     <>
       <div className='filter' />
       <div className='nav-bar'>
 
-        <div className='logo section' id='logo' onClick={dispatchAction}>
-          Logo
+        <div className='logo section'  >
+          <AiOutlineApple size={18 } id='logo' onClick={dispatchAction} />
           {/* <img src="" alt="Apple Logo" /> */}
           <div
             className={`${state.section === "logo" ? "selected-logo" : "not-selected"
