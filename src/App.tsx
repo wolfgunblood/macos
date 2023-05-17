@@ -35,7 +35,7 @@ const App = () => {
               <Weather />
             <WallpaperMenu />
             {/* <VSCode /> */}
-            {/* <ContextMenu /> */}
+            <ContextMenu />
             <Finder />
           </Page>
             
