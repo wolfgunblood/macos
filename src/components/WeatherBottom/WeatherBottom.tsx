@@ -81,16 +81,6 @@ const WeatherBottom = () => {
   };
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
-  const hourly = [
-    { time: '12:00 am', tempHigh: '18', tempLow: '15', icon: '01d' },
-    { time: '1:00 am', tempHigh: '18', tempLow: '15', icon: '01d' },
-    { time: '2:00 am', tempHigh: '18', tempLow: '15', icon: '01d' },
-    { time: '3:00 am', tempHigh: '18', tempLow: '15', icon: '01d' },
-    { time: '4:00 am', tempHigh: '18', tempLow: '15', icon: '01d' },
-    { time: '5:00 am', tempHigh: '18', tempLow: '15', icon: '01d' },
-    { time: '6:00 am', tempHigh: '18', tempLow: '15', icon: '01d' },
-    { time: '7:00 am', tempHigh: '18', tempLow: '15', icon: '01d' },
-  ];
 
   const currrentTime = (t: any) => {
     // const time = t;
