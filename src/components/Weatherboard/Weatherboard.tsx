@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import './Weatherboard.scss';
 import { store } from '../../App';
 import sampleWeatherData from '../../utils/keys/sampleWeatherData';
