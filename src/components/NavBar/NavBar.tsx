@@ -5,7 +5,8 @@ import DropdownContent from '../DropdownContent/DropdownContent';
 import SettingsDropdown from '../SettingsDropdown/SettingsDropdown';
 import getDate from '../../utils/helpers/getDate';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ReactComponent as Settings } from "../../resources/images/svg/settings.svg";
+import { GiToggles } from "react-icons/gi";
+import { IconContext } from "react-icons";
 
 const NavBar = () => {
 
@@ -22,9 +23,9 @@ const NavBar = () => {
     });
   };
 
-  const toggleSettings = (e:  React.MouseEvent<HTMLElement>) => {
+  const toggleSettings = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
-    if(state.settings.open){
+    if (state.settings.open) {
       dispatch({
         type: "settings/CLOSE",
       });
@@ -39,7 +40,7 @@ const NavBar = () => {
       type: "date/SET",
     });
   }, []);
-  
+
   setInterval(() => {
     dispatch({
       type: "date/SET",
@@ -55,9 +56,8 @@ const NavBar = () => {
           Logo
           {/* <img src="" alt="Apple Logo" /> */}
           <div
-                className={`${
-                  state.section === "logo" ? "selected-logo" : "not-selected"
-                  }`}
+            className={`${state.section === "logo" ? "selected-logo" : "not-selected"
+              }`}
           >
           </div>
           {state.section === "logo" ? <DropdownContent /> : null}
@@ -67,47 +67,42 @@ const NavBar = () => {
         <div className='finder section' id='finder' onClick={dispatchAction}>
           Finder
           <div
-            className={`${
-              state.section === "finder" ? "selected-finder" : "not-selected"
-            }`}
+            className={`${state.section === "finder" ? "selected-finder" : "not-selected"
+              }`}
           ></div>
           {state.section === "finder" ? <DropdownContent /> : null}
         </div>
-        
+
 
         <div className='file section' id='file' onClick={dispatchAction}>
           File
           <div
-              className={`${
-                state.section === "file" ? "selected-file" : "not-selected"
-                }`}
+            className={`${state.section === "file" ? "selected-file" : "not-selected"
+              }`}
           ></div>
           {state.section === "file" ? <DropdownContent /> : null}
         </div>
         <div className='edit section' id='edit' onClick={dispatchAction}>
           Edit
           <div
-              className={`${ 
-                state.section === "edit" ? "selected-edit" : "not-selected"
-                }`}
+            className={`${state.section === "edit" ? "selected-edit" : "not-selected"
+              }`}
           ></div>
           {state.section === "edit" ? <DropdownContent /> : null}
         </div>
         <div className='view section' id='view' onClick={dispatchAction}>
           View
           <div
-              className={`${
-                state.section === "view" ? "selected-view" : "not-selected"
-                }`}
+            className={`${state.section === "view" ? "selected-view" : "not-selected"
+              }`}
           ></div>
           {state.section === "view" ? <DropdownContent /> : null}
         </div>
         <div className='go section' id='go' onClick={dispatchAction}>
           Go
           <div
-              className={`${  
-                state.section === "go" ? "selected-go" : "not-selected"
-                }`}
+            className={`${state.section === "go" ? "selected-go" : "not-selected"
+              }`}
           ></div>
           {state.section === "go" ? <DropdownContent /> : null}
         </div>
@@ -122,18 +117,19 @@ const NavBar = () => {
         </div> */}
         <div className='help section' id='help' onClick={dispatchAction}>
           Help
-          
+
           <div
-                className={`${
-                  state.section === "help" ? "selected-help" : "not-selected"
-                  }`}
+            className={`${state.section === "help" ? "selected-help" : "not-selected"
+              }`}
           ></div>
           {state.section === "help" ? <DropdownContent /> : null}
         </div>
 
         <div className='right'>
           <div>
-            <Settings className='settings set' onClick={toggleSettings} />
+            <IconContext.Provider value={{ color: "white", className: "settings set" }}>
+              <GiToggles size={15} onClick={toggleSettings} />
+            </IconContext.Provider>
             {state.settings.open && <SettingsDropdown />}
             {/* {console.log(state.settings.open)} */}
             {/* <SettingsDropdown /> */}
