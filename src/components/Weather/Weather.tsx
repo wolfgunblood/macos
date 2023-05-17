@@ -25,6 +25,7 @@ const Weather = () => {
   return (
     <Draggable
       handle='#handle'
+      
       onStart={(e: any) => {
         if (e.target.id !== "handle") {
           return false;

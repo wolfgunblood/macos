@@ -34,8 +34,8 @@ const App = () => {
             <Dock />
               <Weather />
             <WallpaperMenu />
-            <VSCode />
-            {/* <ContextMenu /> */}
+            {/* <VSCode /> */}
+            <ContextMenu />
             <Finder />
           </Page>
             

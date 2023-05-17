@@ -60,17 +60,17 @@ const WallpaperMenu = () => {
         [fox_in_somber_forest, "Fox in Somber Forest"],
         [blood_diamonds, "Blood Diamonds"],
         [black_bird_in_a_city, "Black Bird in a City"],
-        [sunrise_of_dreams,"Sunrise of Dreams"],
+        [sunrise_of_dreams, "Sunrise of Dreams"],
         [how_do_we_get_down, "How do we get down?"],
         [cozy_night_with_cat, "Cozy Night with Cat"],
-        [age_of_titans,"Age of Titans"],
+        [age_of_titans, "Age of Titans"],
         [dune, "Dune"],
         [vibrant_night, "Vibrant Night"],
         [cabin_in_the_woods, "Cabin in the Woods"],
         [asgardian_sunrise, "Asgardian Sunrise"],
         [asura_lok, "Asura Lok"],
         [my_neighbour_totoro, "My Neighbour Totoro"],
-        [tron,"Tron"]
+        [tron, "Tron"]
     ];
 
     const wallPaper = [
@@ -101,8 +101,8 @@ const WallpaperMenu = () => {
 
     };
 
-    const closeWindow = (e : React.MouseEvent<HTMLElement>) => {
-        
+    const closeWindow = (e: React.MouseEvent<HTMLElement>) => {
+
         e.stopPropagation();
         console.log("button clicked!! Wallpaper");
         dispatch({
@@ -110,8 +110,8 @@ const WallpaperMenu = () => {
         });
     };
 
-    const minimizeWindow = (e : React.MouseEvent<HTMLElement>) => {
-        
+    const minimizeWindow = (e: React.MouseEvent<HTMLElement>) => {
+
         e.stopPropagation();
         console.log("button clicked!! Wallpaper");
         dispatch({
@@ -119,8 +119,8 @@ const WallpaperMenu = () => {
         });
     };
 
-    const stretchWindow = (e : React.MouseEvent<HTMLElement>) => {
-        
+    const stretchWindow = (e: React.MouseEvent<HTMLElement>) => {
+
         e.stopPropagation();
         console.log("button clicked!! Wallpaper");
         dispatch({
@@ -128,8 +128,8 @@ const WallpaperMenu = () => {
         });
     };
 
-    const floatWindow = (e : React.MouseEvent<HTMLElement>) => {
-        
+    const floatWindow = (e: React.MouseEvent<HTMLElement>) => {
+
         e.stopPropagation();
         console.log("button clicked!! Wallpaper");
         dispatch({
@@ -140,85 +140,86 @@ const WallpaperMenu = () => {
     useEffect(() => {
         const wallpaperMenu = document.getElementById("wallpaper-menu");
         if (state.float.wallpaperBoard && wallpaperMenu) {
-          wallpaperMenu.style.zIndex = "8";
-        }else{
-          wallpaperMenu.style.zIndex = "4";
-    
+            wallpaperMenu.style.zIndex = "8";
+        } else {
+            wallpaperMenu.style.zIndex = "4";
+
         }
-      }, [state.float.weatherBoard]);
-    
+    }, [state.float.weatherBoard]);
+
 
     return (
         <Draggable handle="#wallpaper-handle">
-                <div 
+            
+            <div
                 className={`wallpaper-menu wallp 
                         ${state.wallpaperWindow.wallpaperOpen ? 'openWallpaper' : ''}
                         ${state.wallpaperWindow.wallpaperClose ? 'closedWallpaper' : ''}
                         ${state.wallpaperWindow.wallpaperMinimize ? 'minimizedWallpaper' : ''}
                         ${state.wallpaperWindow.wallpaperStretch ? 'stretchedWallpaper' : ''}
 
-                        `} 
-                    id='wallpaper-menu'
-                    onClick={floatWindow}
-                >
-                    <section className='handle' id='wallpaper-handle'>
-                        <div className='dots'>
-                            <div className='dot red' onClick={closeWindow}>
-                                <Close className='close' />
-                            </div>
-
-                            <div className='dot yellow' onClick={minimizeWindow}>
-                                <Minimize className='minimize' />
-                            </div>
-
-                            <div className='dot green' onClick={stretchWindow}>
-                                <Stretch className='stretch' />
-                            </div>
+                        `}
+                id='wallpaper-menu'
+                onClick={floatWindow}
+            >
+                <section className='handle' id='wallpaper-handle'>
+                    <div className='dots'>
+                        <div className='dot red' onClick={closeWindow}>
+                            <Close className='close' />
                         </div>
-                        <h1>
-                            Wallpaper
-                        </h1>
-                    </section>
 
-                    <section className='selection'>
-                        <div className='prev'>
-                            <img
-                                id='check'
-                                src={state.settings.wallpaper.name}
-                                alt="Current Wallpaper"
-                                className='current'
-                            />
-                            <h1>Current Wallpaper</h1>
-                            {/* <h2>Dynamic Wallpaper</h2>
+                        <div className='dot yellow' onClick={minimizeWindow}>
+                            <Minimize className='minimize' />
+                        </div>
+
+                        <div className='dot green' onClick={stretchWindow}>
+                            <Stretch className='stretch' />
+                        </div>
+                    </div>
+                    <h1>
+                        Wallpaper
+                    </h1>
+                </section>
+
+                <section className='selection'>
+                    <div className='prev'>
+                        <img
+                            id='check'
+                            src={state.settings.wallpaper.name}
+                            alt="Current Wallpaper"
+                            className='current'
+                        />
+                        <h1>Current Wallpaper</h1>
+                        {/* <h2>Dynamic Wallpaper</h2>
 
                             <div className='check'>
                                 <input type="checkbox" />
                                 <h2>Change dark/light mode as wallpaper change</h2>
                             </div> */}
-                        </div>
+                    </div>
 
-                        <div className='wallpaper-selector'>
-                            <h1>Dynamic Wallpaper</h1>
-                            <div className='grid'>
-                                {wallPaper.map((wally, i) => {
-                                    return (
-                                        <div className='item-container'>
-                                            <img
-                                                key={i}
-                                                src={wally[1]}
-                                                alt="wallpaper"
-                                                className='image-wrapper iw'
-                                                onClick={(e) => changeWallper(e, wally)}
-                                            />
-                                            <h2>{wally[2]}</h2>
-                                        </div>
-                                    );
+                    <div className='wallpaper-selector'>
+                        <h1>Dynamic Wallpaper</h1>
+                        <div className='grid'>
+                            {wallPaper.map((wally, i) => {
+                                return (
+                                    <div className='item-container'>
+                                        <img
+                                            key={i}
+                                            src={wally[1]}
+                                            alt="wallpaper"
+                                            className='image-wrapper iw'
+                                            onClick={(e) => changeWallper(e, wally)}
+                                        />
+                                        <h2>{wally[2]}</h2>
+                                    </div>
+                                );
 
-                                })
-                                }
-                            </div>
+                            })
+                            }
                         </div>
-                    
+                    </div>
+
                     <div className='wallpaper-selector-two'>
                         <h1>
                             Standalone Wallpaper
@@ -245,10 +246,10 @@ const WallpaperMenu = () => {
 
                         </div>
                     </div>
-                    </section>
-                </div>
+                </section>
+            </div>
 
-           
+
 
         </Draggable>
     )

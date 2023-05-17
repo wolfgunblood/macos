@@ -1,10 +1,7 @@
 import React, { useContext } from 'react';
 import './SettingsDropdown.scss';
 import { store } from '../../App';
-import { ReactComponent as Animations } from "../../resources/images/svg/animations.svg";
-import { ReactComponent as Airdrop } from "../../resources/images/svg/airdrop.svg";
-import { ReactComponent as Tick } from "../../resources/images/svg/tick.svg";
-import { ReactComponent as Notch } from "../../resources/images/svg/notch.svg";
+import { MdWifiTethering, MdAnimation } from "react-icons/md";
 
 const SettingsDropdown = () => {
   const [state, dispatch] = useContext(store);
@@ -12,9 +9,9 @@ const SettingsDropdown = () => {
   const openWallpaper = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
     e.stopPropagation();
-    dispatch({type: 'wallpaper/OPEN'});
+    dispatch({ type: 'wallpaper/OPEN' });
 
-};
+  };
 
   return (
     <div
@@ -26,7 +23,7 @@ const SettingsDropdown = () => {
             className='airdrop-btn set'
             type='button'
           >
-            <Airdrop
+            <MdWifiTethering
               fill="white"
               style={{ transition: "0.25 all" }}
             />
@@ -39,7 +36,7 @@ const SettingsDropdown = () => {
             className='set'
             type='button'
           >
-            <Animations
+            <MdAnimation
               fill="white"
               style={{ transition: "0.25 all" }}
             />
@@ -109,10 +106,10 @@ const SettingsDropdown = () => {
       >
         <img className='preview' src={`${state.settings.wallpaper.name}`} alt="wallpaper" />
         <div className='desc-container'>
-        <h2 className='title'>
-          Wallpaper
-        </h2>
-        <h3 className='type'>Dynamic Wallpaper</h3>
+          <h2 className='title'>
+            Wallpaper
+          </h2>
+          <h3 className='type'>Dynamic Wallpaper</h3>
         </div>
       </section>
     </div>
