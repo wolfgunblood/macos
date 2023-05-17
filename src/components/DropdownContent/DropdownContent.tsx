@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import { useContext} from 'react';
 import { store } from '../../App';
 import getDropdownItems from '../../utils/helpers/getDropdownContent';
 import './DropdownContent.scss';
@@ -28,7 +28,7 @@ const DropdownContent = () => {
             : ""
         }`}
     >
-        {content.map((item,i) => {
+        {content.map((item) => {
             if(item.name === "divider") return <div  className='divider dd'/>;
 
             return (
