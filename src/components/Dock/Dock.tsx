@@ -71,8 +71,8 @@ const Dock = () => {
                 : "" 
                 }`}
                 id='0'
-                onMouseEnter = {() => {}}
-                onMouseLeave = {() => {}}
+                // onMouseEnter = {() => {}}
+                // onMouseLeave = {() => {}}
                 onClick={openFinder}
             >
                 <div className='tool-tip'>Finder</div>
@@ -92,8 +92,8 @@ const Dock = () => {
                 : "" 
                 }`}
                 id='1'
-                onMouseEnter = {() => {}}
-                onMouseLeave = {() => {}}
+                // onMouseEnter = {() => {}}
+                // onMouseLeave = {() => {}}
             >
                 <div className='tool-tip'>Calculator</div>
                 <img 
@@ -111,8 +111,8 @@ const Dock = () => {
                 : "" 
                 }`}
                 id='2'
-                onMouseEnter = {() => {}}
-                onMouseLeave = {() => {}}
+                // onMouseEnter = {() => {}}
+                // onMouseLeave = {() => {}}
                 onClick={openWallpaper}
             >
                 <div className='tool-tip'>Photos</div>
@@ -130,8 +130,8 @@ const Dock = () => {
                 : "" 
                 }`}
                 id='3'
-                onMouseEnter = {() => {}}
-                onMouseLeave = {() => {}}
+                // onMouseEnter = {() => {}}
+                // onMouseLeave = {() => {}}
             >
                 <div className='tool-tip'>Calendar</div>
                 <img 
@@ -148,8 +148,8 @@ const Dock = () => {
                 : "" 
                 }`}
                 id='4'
-                onMouseEnter = {() => {}}
-                onMouseLeave = {() => {}}
+                // onMouseEnter = {() => {}}
+                // onMouseLeave = {() => {}}
             >
                 <div className='tool-tip'>Discord</div>
                 <img 
@@ -166,8 +166,8 @@ const Dock = () => {
                 : "" 
                 }`}
                 id='5'
-                onMouseEnter = {() => {}}
-                onMouseLeave = {() => {}}
+                // onMouseEnter = {() => {}}
+                // onMouseLeave = {() => {}}
             >
                 <div className='tool-tip'>Github</div>
                 <img 
@@ -185,8 +185,8 @@ const Dock = () => {
                 : "" 
                 }`}
                 id='8'
-                onMouseEnter = {() => {}}
-                onMouseLeave = {() => {}}
+                // onMouseEnter = {() => {}}
+                // onMouseLeave = {() => {}}
             >
                 <div className='tool-tip'>Spotify</div>
                 <img 
@@ -203,8 +203,8 @@ const Dock = () => {
                 : "" 
                 }`}
                 id='9'
-                onMouseEnter = {() => {}}
-                onMouseLeave = {() => {}}
+                // onMouseEnter = {() => {}}
+                // onMouseLeave = {() => {}}
                 onClick={openVSCode}
             >
                 <div className='tool-tip'>VS Code</div>
@@ -222,8 +222,8 @@ const Dock = () => {
                 : "" 
                 }`}
                 id='10'
-                onMouseEnter = {() => {}}
-                onMouseLeave = {() => {}}
+                // onMouseEnter = {() => {}}
+                // onMouseLeave = {() => {}}
                 onClick={openWeather}
             >
                 <div className='tool-tip'>Weather</div>
