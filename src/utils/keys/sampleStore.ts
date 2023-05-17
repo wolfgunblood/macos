@@ -52,6 +52,7 @@ const sampleStore ={
         wallpaperBoard: false,
     },
     finderCloseOpen: false,
+    searchCity: "New York",
     
 }
 

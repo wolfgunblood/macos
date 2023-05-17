@@ -26,7 +26,7 @@ const Finder = () => {
                     ${isClose ? 'finder-close' : ''}           
                 `}
                 id='finder-window'
-                onClick={() => {}}
+                // onClick={() => {}}
             >
                 <WindowNav
                     handleName={finderHandle} 
