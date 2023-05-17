@@ -99,6 +99,8 @@ const reducer = (state = sampleStore, action: AnyAction) => {
 
         case "weather/CLOSE":
             // eslint-disable-next-line no-case-declarations
+            console.log("Close Weather");
+            // eslint-disable-next-line no-case-declarations
             const closeWeather = {
                 ...state,
                 weatherWindow: {
@@ -112,6 +114,8 @@ const reducer = (state = sampleStore, action: AnyAction) => {
             return closeWeather;
 
         case "weather/OPEN":
+            // eslint-disable-next-line no-case-declarations
+            console.log("Open Weather");
             // eslint-disable-next-line no-case-declarations
             const openWeather = {
                 ...state,
@@ -127,6 +131,8 @@ const reducer = (state = sampleStore, action: AnyAction) => {
 
         case "weather/MINI":
             // eslint-disable-next-line no-case-declarations
+            console.log("Minimize Weather");
+            // eslint-disable-next-line no-case-declarations
             const minimizeWeather = {
                 ...state,
                 weatherWindow: {
@@ -140,6 +146,8 @@ const reducer = (state = sampleStore, action: AnyAction) => {
             return minimizeWeather;
 
         case "weather/STRETCH":
+            // eslint-disable-next-line no-case-declarations
+            console.log("Expand Weather");
             // eslint-disable-next-line no-case-declarations
             const stretchWeather = {
                 ...state,

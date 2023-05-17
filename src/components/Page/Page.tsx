@@ -43,8 +43,8 @@ const Page = ({children} : any) => {
     <div
     className='page'
     id='page'
-    onContextMenu={openContextMenu}
-    onClick={handleLeftClick}
+    // onContextMenu={openContextMenu}
+    // onClick={handleLeftClick}
     
     >
       {/* {console.log(children)} */}

@@ -10,12 +10,12 @@ import { FiGithub } from  "react-icons/fi";
 
 const QueryBoardLinks = () => {
 
-  const [  dispatch ] = useContext(store);
+  const [  state,dispatch ] = useContext(store);
 
   const closeWindow = (e : React.MouseEvent<HTMLElement>) => {
         
     e.stopPropagation();
-    console.log("button clicked!! Wallpaper");
+    console.log("button clicked!! Weather");
     dispatch({
         type: "weather/CLOSE",
     });
@@ -24,7 +24,7 @@ const QueryBoardLinks = () => {
 const minimizeWindow = (e : React.MouseEvent<HTMLElement>) => {
     
     e.stopPropagation();
-    console.log("button clicked!! Wallpaper");
+    console.log("button clicked!! Weather");
     dispatch({
         type: "weather/MINI",
     });
@@ -33,7 +33,7 @@ const minimizeWindow = (e : React.MouseEvent<HTMLElement>) => {
 const stretchWindow = (e : React.MouseEvent<HTMLElement>) => {
     
     e.stopPropagation();
-    console.log("button clicked!! Wallpaper");
+    console.log("button clicked!! Weather");
     dispatch({
         type: "weather/STRETCH",
     });

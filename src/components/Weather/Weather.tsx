@@ -17,6 +17,7 @@ const Weather = () => {
     if (state.float.weatherBoard && weatherWindow) {
       weatherWindow.style.zIndex = "8";
     }else{
+      if(weatherWindow)
       weatherWindow.style.zIndex = "3";
 
     }
