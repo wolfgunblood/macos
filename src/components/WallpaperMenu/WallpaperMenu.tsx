@@ -1,12 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import './WallpaperMenu.scss';
 import { store } from '../../App';
-import { ReactComponent as Close } from '../../resources/images/svg/close.svg';
-import { ReactComponent as Minimize } from '../../resources/images/svg/minimize.svg';
-import { ReactComponent as Stretch } from '../../resources/images/svg/stretch.svg';
+import { GrFormClose, GrFormSubtract } from "react-icons/gr";
+import { CgExpand } from "react-icons/cg";
 import Draggable from 'react-draggable';
 import {
-    catalina_day,
     catalina, preview_catalina,
     ventura, preview_ventura,
     dome, preview_dome,
@@ -48,7 +46,7 @@ import {
 const WallpaperMenu = () => {
     const [state, dispatch] = useContext(store);
 
-    const [isClose, setIsClose] = useState(false);
+    // const [isClose, setIsClose] = useState(false);
 
     const wallPaper2 = [
         [krypt_demise, "Kryptonian Demise"],
@@ -88,7 +86,7 @@ const WallpaperMenu = () => {
         [ventura, preview_ventura, "Ventura"]
     ];
     // const preview_wallPaper = [preview_bigsur,preview_bigsurgraphic,preview_catalina,preview_dome,preview_lake,preview_iridescence,preview_mojave,preview_monterey,preview_peak,preview_solargrad,preview_thedesert,preview_ventura ];
-    const changeWallper = (e: React.MouseEvent<HTMLElement>, wally) => {
+    const changeWallper = (e: React.MouseEvent<HTMLElement>, wally : string[]) => {
         e.preventDefault();
 
         // console.log(e);
@@ -142,10 +140,11 @@ const WallpaperMenu = () => {
         if (state.float.wallpaperBoard && wallpaperMenu) {
             wallpaperMenu.style.zIndex = "8";
         } else {
+            if(wallpaperMenu)
             wallpaperMenu.style.zIndex = "4";
 
         }
-    }, [state.float.weatherBoard]);
+    }, [state.float.wallpaperBoard, state.float.weatherBoard]);
 
 
     return (
@@ -165,15 +164,15 @@ const WallpaperMenu = () => {
                 <section className='handle' id='wallpaper-handle'>
                     <div className='dots'>
                         <div className='dot red' onClick={closeWindow}>
-                            <Close className='close' />
+                            <GrFormClose className='close' />
                         </div>
 
                         <div className='dot yellow' onClick={minimizeWindow}>
-                            <Minimize className='minimize' />
+                            <GrFormSubtract className='minimize' />
                         </div>
 
                         <div className='dot green' onClick={stretchWindow}>
-                            <Stretch className='stretch' />
+                            <CgExpand className='stretch' />
                         </div>
                     </div>
                     <h1>
@@ -225,7 +224,7 @@ const WallpaperMenu = () => {
                             Standalone Wallpaper
                         </h1>
                         <div className='grid'>
-                            {wallPaper2.map((wally, i) => {
+                            {wallPaper2.map((wally) => {
 
                                 return (
                                     <div className='item-container'>
