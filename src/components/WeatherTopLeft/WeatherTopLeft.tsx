@@ -1,4 +1,3 @@
-import Reac, { useState, useEffect } from 'react';
 import './WeatherTopLeft.scss';
 
 // import { ReactComponent as Cloud } from '../../assets/SVG/cloud.svg';
@@ -22,13 +21,12 @@ import {
   BsCloudDrizzle as Rainy,
   BsCloudSnow as Snow,
 } from 'react-icons/bs';
-import { IconContext } from "react-icons";
 import { RiMoonFoggyLine as Mist } from "react-icons/ri";
 
 
 const WeatherTopLeft = ({ weatherData }) => {
   const { name, main, weather } = weatherData;
-  const { temp, feels_like, humidity } = main;
+  const { temp } = main;
 
   const icons = {
     '01d': <Sun size={50} />,
