@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState,MouseEvent } from 'react';
 import './WindowNav.scss';
 import { store } from '../../App';
-import { ReactComponent as Close } from '../../resources/images/svg/close.svg';
-import { ReactComponent as Minimize } from '../../resources/images/svg/minimize.svg';
-import { ReactComponent as Stretch } from '../../resources/images/svg/stretch.svg';
+import { GrFormClose, GrFormSubtract } from "react-icons/gr";
+import { CgExpand } from "react-icons/cg";
 import Draggable from 'react-draggable';
 
 const WindowNav = ({ handleName, name, isClose, setIsClose }) => {
@@ -17,15 +16,15 @@ const WindowNav = ({ handleName, name, isClose, setIsClose }) => {
         <section className='handle1' id={`${handleName}`}>
             <div className='dots-ver2'>
                 <div className='dot-ver2 red1' onClick={closeWindow}>
-                    <Close className='close1' />
+                    <GrFormClose className='close1' />
                 </div>
 
-                <div className='dot-ver2 yellow1' onClick={() => { }}>
-                    <Minimize className='minimize1' />
+                <div className='dot-ver2 yellow1' >
+                    <GrFormSubtract className='minimize1' />
                 </div>
 
-                <div className='dot-ver2 green1' onClick={() => { }}>
-                    <Stretch className='stretch1' />
+                <div className='dot-ver2 green1' >
+                    <CgExpand className='stretch1' />
                 </div>
             </div>
             <div className='windowNav-header'>

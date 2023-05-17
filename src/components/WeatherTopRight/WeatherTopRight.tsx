@@ -1,31 +1,27 @@
 import React from 'react';
 import './WeatherTopRight.scss'
-import { ReactComponent as Cloud } from '../../assets/SVG/cloud.svg';
-import { ReactComponent as Humidity } from '../../assets/SVG/humidity.svg';
-import { ReactComponent as CloudDay } from '../../assets/SVG/cloudy-day.svg';
-import { ReactComponent as CloudNight } from '../../assets/SVG/cloudy-night.svg';
-import { ReactComponent as ArrowLeft } from '../../assets/SVG/arrow_left.svg';
-import { ReactComponent as ArrowRight } from '../../assets/SVG/arrow_right.svg';
-import { ReactComponent as Lightning } from '../../assets/SVG/lightning.svg';
-import { ReactComponent as MapPin } from '../../assets/SVG/map-pin.svg';
-import { ReactComponent as Mist } from '../../assets/SVG/mist.svg';
-import { ReactComponent as Moon } from '../../assets/SVG/moon.svg';
-import { ReactComponent as Rainy } from '../../assets/SVG/rainy.svg';
-import { ReactComponent as Snow } from '../../assets/SVG/snow.svg';
-import { ReactComponent as Sun } from '../../assets/SVG/sun.svg';
-import { ReactComponent as Thermo } from '../../assets/SVG/thermo.svg';
-import { ReactComponent as Wind } from '../../assets/SVG/wind.svg';
+// import { ReactComponent as Cloud } from '../../assets/SVG/cloud.svg';
+// import { ReactComponent as Humidity } from '../../assets/SVG/humidity.svg';
+// import { ReactComponent as Rainy } from '../../assets/SVG/rainy.svg';
+// import { ReactComponent as Thermo } from '../../assets/SVG/thermo.svg';
+// import { ReactComponent as Wind } from '../../assets/SVG/wind.svg';
+import { BsCloudDrizzle as Rainy } from "react-icons/bs"
+import { BsThermometerSun as Thermo } from "react-icons/bs"
+import { FiWind as Wind } from "react-icons/fi";
+import { WiHumidity as Humidity } from "react-icons/wi";
+import { IconContext } from "react-icons";
 
-const WeatherTopRight = ({weatherData}) => {
-    const { name, main, weather,wind} = weatherData;
+
+const WeatherTopRight = ({ weatherData }) => {
+    const { name, main, weather, wind } = weatherData;
     const { temp, feels_like, humidity } = main;
     return (
         <div>
             <div className='weather-details-container'>
                 <div className='weather-details'>
-                    <div className='weather-details__icon'>
-                        <Thermo />
-                    </div>
+                    <IconContext.Provider value={{ className: 'weather-details__icon' }}>
+                        <Thermo size={35} />
+                    </IconContext.Provider>
 
                     <div className='weather-details__info'>
                         <div className='weather-details__label'>Feels Like</div>
@@ -33,9 +29,9 @@ const WeatherTopRight = ({weatherData}) => {
                     </div>
                 </div>
                 <div className='weather-details'>
-                    <div className='weather-details__icon'>
-                        <Humidity />
-                    </div>
+                    <IconContext.Provider value={{ className: 'weather-details__icon' }}>
+                        <Humidity size={40} />
+                    </IconContext.Provider>
 
                     <div className='weather-details__info'>
                         <div className='weather-details__label'>Humidity</div>
@@ -44,9 +40,9 @@ const WeatherTopRight = ({weatherData}) => {
                 </div>
 
                 <div className='weather-details'>
-                    <div className='weather-details__icon'>
-                        <Rainy />
-                    </div>
+                    <IconContext.Provider value={{ className: 'weather-details__icon' }}>
+                        <Rainy size={35} />
+                    </IconContext.Provider>
 
                     <div className='weather-details__info'>
                         <div className='weather-details__label'>Chance of Rain</div>
@@ -55,9 +51,9 @@ const WeatherTopRight = ({weatherData}) => {
                 </div>
 
                 <div className='weather-details'>
-                    <div className='weather-details__icon'>
-                        <Wind />
-                    </div>
+                    <IconContext.Provider value={{ className: 'weather-details__icon' }}>
+                        <Wind size={35} />
+                    </IconContext.Provider>
 
                     <div className='weather-details__info'>
                         <div className='weather-details__label'>Wind Speed</div>
