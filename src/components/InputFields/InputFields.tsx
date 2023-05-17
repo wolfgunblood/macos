@@ -2,33 +2,29 @@ import React, { useContext, useState } from 'react';
 import { store } from "../../App";
 import './InputField.scss';
 import Refresh from '../../resources/images/refresh.png';
+const InputFields = () => {
+  const [newCity, setNewCity] = useState('');
 
-const InputFields = ( { searchCity, setSearchCity, updatedCity, setUpdatedCity} ) => {
+  const [state, dispatch] = useContext(store);
 
-  const [ newCity, setNewCity ] = useState<string>('');
-  
   const changeCity = (e) => {
-    console.log(e.target.value);
-    setNewCity(e.target.value);
-  }
-
-  const updateCity = (e) => {
     e.preventDefault();
-    setUpdatedCity(newCity);
     setNewCity('');
-  }
-
+    
+    dispatch({ type: 'city/CHANGE', payload: newCity });
+  };
+  
   return (
-    <form className='input-container' onSubmit={updateCity}>
-      
+    <form className='input-container' onSubmit={changeCity}>
+
       <input
         type='text'
         id='input'
         className='input-field'
         placeholder='Your City'
-        value = {newCity}
-        onChange={changeCity}
-      />    
+        value={newCity}
+        onChange={(e) => setNewCity(e.target.value)}
+      />
       <img
         src={Refresh}
         alt="Refresh"

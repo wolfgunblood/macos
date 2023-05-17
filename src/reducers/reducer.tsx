@@ -247,6 +247,19 @@ const reducer = (state = sampleStore, action: AnyAction) => {
             };
             return openFinder;
 
+        case "city/CHANGE":
+            
+            // eslint-disable-next-line no-case-declarations
+            const changeCity = {
+                ...state,
+                city : action.payload,
+                };
+            return changeCity;
+        
+            default:
+                console.log("Error no dispatch found in Reducer");
+
+                return state;
        
     }
 }

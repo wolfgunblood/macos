@@ -7,9 +7,6 @@ import Draggable from 'react-draggable';
 
 const Weather = () => {
 
-  const [ searchCity, setSearchCity ] = useState<string>('');
-  const [ updatedCity, setUpdatedCity ] = useState<string>('New York');
-  const [errorSearch,setErrorSearch] = useState(false);
   const [ state, dispatch ] = useContext(store);
 
   useEffect(() => {
@@ -42,22 +39,8 @@ const Weather = () => {
         `}
         id='weather-window'
         >
-        <Queryboard  
-          searchCity={searchCity}
-          setSearchCity={setSearchCity}
-          updatedCity={updatedCity}
-          setUpdatedCity={setUpdatedCity}
-          errorSearch={errorSearch}
-          setErrorSearch={setErrorSearch}
-          />
-        <Weatherboard 
-            searchCity={searchCity}
-            setSearchCity={setSearchCity}
-            updatedCity={updatedCity}
-            setUpdatedCity={setUpdatedCity}
-            errorSearch={errorSearch}
-            setErrorSearch={setErrorSearch}
-        />
+        <Queryboard  />
+        <Weatherboard />
       </div>
      </Draggable>
   )

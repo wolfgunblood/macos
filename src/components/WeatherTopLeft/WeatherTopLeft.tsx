@@ -18,7 +18,7 @@ import { ReactComponent as Thermo } from '../../assets/SVG/thermo.svg';
 import { ReactComponent as Wind } from '../../assets/SVG/wind.svg';
 
 
-const WeatherTopLeft = ({weatherData,newCity,setNewCity,updatedCity,setUpdatedCity,errorSearch}) => {
+const WeatherTopLeft = ({weatherData }) => {
     const { name, main, weather} = weatherData;
     const { temp, feels_like, humidity } = main;
 
@@ -45,26 +45,9 @@ const WeatherTopLeft = ({weatherData,newCity,setNewCity,updatedCity,setUpdatedCi
     const str = weather[0].description;
     const updateStr  = str
                       .split(" ")
-                      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                      .map((word: string)=> word.charAt(0).toUpperCase() + word.slice(1))
                       .join(" ");
 
-    const changeCity = (e) => {
-
-      // const new = e.target.value;
-      e.preventDefault();      
-      // console.log(e);
-      // console.log(e.target);
-      // console.log(e.target.value);
-      setUpdatedCity(newCity);
-    }
-
-    const changeCity1 = (e) => {
-      // console.log(e);
-      // console.log(e.target);
-      // console.log(e.target.value);
-      setNewCity(e.target.value);
-    }
-  
   return (
     <div className='weather-info'>
         {/* {console.log(weatherData)} */}

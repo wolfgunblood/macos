@@ -6,7 +6,7 @@ import QueryBoardLinks from '../QueryBoardLinks/QueryBoardLinks';
 import InputFields from '../InputFields/InputFields';
 import Draggable from 'react-draggable';
 
-const Queryboard = ({ searchCity, setSearchCity, updatedCity, setUpdatedCity, errorSearch, setErrorSearch }) => {
+const Queryboard = () => {
 
   const [state, dispatch] = useContext(store);
 
@@ -21,14 +21,7 @@ const Queryboard = ({ searchCity, setSearchCity, updatedCity, setUpdatedCity, er
   return (
     <div className='queryboard' id='handle' onClick={floatWindow}>
       <QueryBoardLinks />
-      <InputFields
-        searchCity={searchCity}
-        setSearchCity={setSearchCity}
-        updatedCity={updatedCity}
-        setUpdatedCity={setUpdatedCity}
-        errorSearach={errorSearch}
-        setErrorSearch={setErrorSearch}
-      />
+      <InputFields />
     </div>
   )
 }

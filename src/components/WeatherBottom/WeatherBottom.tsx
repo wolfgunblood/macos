@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 // import {ReactComponent as ArrowLeft } from '../../assets/SVG/arrow_left.svg'
 import { ReactComponent as Cloud } from '../../assets/SVG/cloud.svg';
 import { ReactComponent as Humidity } from '../../assets/SVG/humidity.svg';
@@ -16,16 +16,20 @@ import { ReactComponent as Snow } from '../../assets/SVG/snow.svg';
 import { ReactComponent as Sun } from '../../assets/SVG/sun.svg';
 import { ReactComponent as Thermo } from '../../assets/SVG/thermo.svg';
 import { ReactComponent as Wind } from '../../assets/SVG/wind.svg';
+import { store } from '../../App';
+
 
 import './WeatherBottom.scss';
 import sampleHourly from '../../utils/keys/sampleHourly';
 
 const weatherApiKey = import.meta.env.VITE_API_KEY;
 
-const WeatherBottom = ({ updatedCity, setUpdatedCity }) => {
+const WeatherBottom = () => {
   const [weatherData, setWeatherData] = useState(sampleHourly);
   const [counter, setCounter] = useState(1);
-  const fetchWeatherData = async (city) => {
+  const [ state, dispatch ] = useContext(store);
+
+  const fetchWeatherData = async (city : string) => {
     try {
       const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&exclude=current,minutely,hourly,alerts&appid=${weatherApiKey}&units=metric`);
       // const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&appid=${weatherApiKey}`);
@@ -46,11 +50,11 @@ const WeatherBottom = ({ updatedCity, setUpdatedCity }) => {
 
 
   useEffect(() => {
-    fetchWeatherData(updatedCity);
+    fetchWeatherData(state.city);
     // fetchWeatherData('Delhi');
     // console.log(weatherData);
     // fetchWeatherData('New York');
-  }, [updatedCity])
+  }, [state.city])
   const icons = {
     '01d': <Sun />,
     '01n': <Moon />,
@@ -93,7 +97,7 @@ const WeatherBottom = ({ updatedCity, setUpdatedCity }) => {
     { time: '7:00 am', tempHigh: '18', tempLow: '15', icon: '01d' },
   ];
 
-  const currrentTime = (t) => {
+  const currrentTime = (t : any) => {
     // const time = t;
     const dateString = t;
     const time = dateString.slice(11, 16);
