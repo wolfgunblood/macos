@@ -1,21 +1,40 @@
 
-import React, { useState, useEffect,useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 // import {ReactComponent as ArrowLeft } from '../../assets/SVG/arrow_left.svg'
-import { ReactComponent as Cloud } from '../../assets/SVG/cloud.svg';
-import { ReactComponent as Humidity } from '../../assets/SVG/humidity.svg';
-import { ReactComponent as CloudDay } from '../../assets/SVG/cloudy-day.svg';
-import { ReactComponent as CloudNight } from '../../assets/SVG/cloudy-night.svg';
-import { ReactComponent as ArrowLeft } from '../../assets/SVG/arrow_left.svg';
-import { ReactComponent as ArrowRight } from '../../assets/SVG/arrow_right.svg';
-import { ReactComponent as Lightning } from '../../assets/SVG/lightning.svg';
-import { ReactComponent as MapPin } from '../../assets/SVG/map-pin.svg';
-import { ReactComponent as Mist } from '../../assets/SVG/mist.svg';
-import { ReactComponent as Moon } from '../../assets/SVG/moon.svg';
-import { ReactComponent as Rainy } from '../../assets/SVG/rainy.svg';
-import { ReactComponent as Snow } from '../../assets/SVG/snow.svg';
-import { ReactComponent as Sun } from '../../assets/SVG/sun.svg';
-import { ReactComponent as Thermo } from '../../assets/SVG/thermo.svg';
-import { ReactComponent as Wind } from '../../assets/SVG/wind.svg';
+// import { ReactComponent as ArrowLeft } from '../../assets/SVG/arrow_left.svg';
+// import { ReactComponent as ArrowRight } from '../../assets/SVG/arrow_right.svg';
+// import { ReactComponent as Cloud } from '../../assets/SVG/cloud.svg';
+// import { ReactComponent as Humidity } from '../../assets/SVG/humidity.svg';
+// import { ReactComponent as CloudDay } from '../../assets/SVG/cloudy-day.svg';
+// import { ReactComponent as CloudNight } from '../../assets/SVG/cloudy-night.svg';
+// import { ReactComponent as Lightning } from '../../assets/SVG/lightning.svg';
+// import { ReactComponent as MapPin } from '../../assets/SVG/map-pin.svg';
+// import { ReactComponent as Mist } from '../../assets/SVG/mist.svg';
+// import { ReactComponent as Moon } from '../../assets/SVG/moon.svg';
+// import { ReactComponent as Rainy } from '../../assets/SVG/rainy.svg';
+// import { ReactComponent as Snow } from '../../assets/SVG/snow.svg';
+// import { ReactComponent as Sun } from '../../assets/SVG/sun.svg';
+// import { ReactComponent as Thermo } from '../../assets/SVG/thermo.svg';
+// import { ReactComponent as Wind } from '../../assets/SVG/wind.svg';
+import { 
+  BsArrowLeftCircle as ArrowLeft,
+  BsArrowRightCircle as ArrowRight,
+} from 'react-icons/bs';
+
+import {
+  BiSun as Sun,
+  BiCloudLightning as Lightning
+} from 'react-icons/bi';
+import {
+  BsCloud as Cloud,
+  BsCloudSun as CloudDay,
+  BsCloudMoon as CloudNight,
+  BsMoon as Moon,
+  BsCloudDrizzle as Rainy,
+  BsCloudSnow as Snow,
+} from 'react-icons/bs';
+import { IconContext } from "react-icons";
+import { RiMoonFoggyLine as Mist } from "react-icons/ri";
 import { store } from '../../App';
 
 
@@ -27,9 +46,9 @@ const weatherApiKey = import.meta.env.VITE_API_KEY;
 const WeatherBottom = () => {
   const [weatherData, setWeatherData] = useState(sampleHourly);
   const [counter, setCounter] = useState(1);
-  const [ state, dispatch ] = useContext(store);
+  const [state, dispatch] = useContext(store);
 
-  const fetchWeatherData = async (city : string) => {
+  const fetchWeatherData = async (city: string) => {
     try {
       const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&exclude=current,minutely,hourly,alerts&appid=${weatherApiKey}&units=metric`);
       // const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&appid=${weatherApiKey}`);
@@ -52,28 +71,28 @@ const WeatherBottom = () => {
   useEffect(() => {
     fetchWeatherData(state.city);
     // fetchWeatherData('Delhi');
-    // console.log(weatherData);
+    console.log(weatherData);
     // fetchWeatherData('New York');
   }, [state.city])
   const icons = {
-    '01d': <Sun />,
-    '01n': <Moon />,
-    '02d': <CloudDay />,
-    '02n': <CloudNight />,
-    '03d': <Cloud />,
-    '03n': <Cloud />,
-    '04d': <Cloud />,
-    '04n': <Cloud />,
-    '09d': <Rainy />,
-    '09n': <Rainy />,
-    '10d': <Rainy />,
-    '10n': <Rainy />,
-    '11d': <Lightning />,
-    '11n': <Lightning />,
-    '13d': <Snow />,
-    '13n': <Snow />,
-    '50d': <Mist />,
-    '50n': <Mist />,
+    '01d': <Sun size={30} />,
+    '01n': <Moon size={30} />,
+    '02d': <CloudDay size={30} />,
+    '02n': <CloudNight size={30} />,
+    '03d': <Cloud size={30} />,
+    '03n': <Cloud size={30} />,
+    '04d': <Cloud size={30} />,
+    '04n': <Cloud size={30} />,
+    '09d': <Rainy size={30} />,
+    '09n': <Rainy size={30} />,
+    '10d': <Rainy size={30} />,
+    '10n': <Rainy size={30} />,
+    '11d': <Lightning size={30} />,
+    '11n': <Lightning size={30} />,
+    '13d': <Snow size={30} />,
+    '13n': <Snow size={30} />,
+    '50d': <Mist size={30} />,
+    '50n': <Mist size={30} />,
   };
   const day = [
     { day: 'Sunday', time: '10:00', tempHigh: '18', tempLow: '15', icon: '01d' },
@@ -97,7 +116,7 @@ const WeatherBottom = () => {
     { time: '7:00 am', tempHigh: '18', tempLow: '15', icon: '01d' },
   ];
 
-  const currrentTime = (t : any) => {
+  const currrentTime = (t: any) => {
     // const time = t;
     const dateString = t;
     const time = dateString.slice(11, 16);
@@ -134,15 +153,15 @@ const WeatherBottom = () => {
         <div className='hourly-btn forecast-selected'>Hourly</div>
         <div className='change-hours'>
           <div className='change-hours__left' onClick={minusOne} >
-            <ArrowLeft />
+            <ArrowLeft size={20} />
           </div>
           {/* {console.log(weatherData)} */}
-          <div className={`dot dot1 ${counter === 1 && 'dot-selected'}`}  data-dot="1"></div>
+          <div className={`dot dot1 ${counter === 1 && 'dot-selected'}`} data-dot="1"></div>
           <div className={`dot dot2 ${counter === 2 && 'dot-selected'}`} data-dot="2"></div>
           <div className={`dot dot3 ${counter === 3 && 'dot-selected'}`} data-dot="3"></div>
 
           <div className='change-hours__right' onClick={plusOne} >
-            <ArrowRight />
+            <ArrowRight size={20} />
           </div>
         </div>
       </div>
@@ -174,7 +193,7 @@ const WeatherBottom = () => {
                 {/* <div className='forecast-hourly__temperature-low'>{item.main.temp_min}°C</div> */}
               </div>
               <div className='forecast-hourly__icon'>
-                {icons[item.weather[0].icon]}
+                {icons[item.weather[0].icon as keyof typeof icons]}
               </div>
             </div>
           ))}
@@ -192,7 +211,7 @@ const WeatherBottom = () => {
                 {/* <div className='forecast-hourly__temperature-low'>{item.main.temp_min}°C</div> */}
               </div>
               <div className='forecast-hourly__icon'>
-                {icons[item.weather[0].icon]}
+                {icons[item.weather[0].icon as keyof typeof icons]}
               </div>
             </div>
           ))}
@@ -210,7 +229,7 @@ const WeatherBottom = () => {
                 {/* <div className='forecast-hourly__temperature-low'>{item.main.temp_min}°C</div> */}
               </div>
               <div className='forecast-hourly__icon'>
-                {icons[item.weather[0].icon]}
+                {icons[item.weather[0].icon as keyof typeof icons]}
               </div>
             </div>
           ))}
