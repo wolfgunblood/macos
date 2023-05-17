@@ -175,9 +175,11 @@ const WallpaperMenu = () => {
                             <CgExpand className='stretch' />
                         </div>
                     </div>
+                    <div className='title-wallpaper'>
                     <h1>
                         Wallpaper
                     </h1>
+                    </div>
                 </section>
 
                 <section className='selection'>
