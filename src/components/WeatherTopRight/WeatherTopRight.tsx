@@ -1,4 +1,3 @@
-import React from 'react';
 import './WeatherTopRight.scss'
 // import { ReactComponent as Cloud } from '../../assets/SVG/cloud.svg';
 // import { ReactComponent as Humidity } from '../../assets/SVG/humidity.svg';
@@ -13,8 +12,8 @@ import { IconContext } from "react-icons";
 
 
 const WeatherTopRight = ({ weatherData }) => {
-    const { name, main, weather, wind } = weatherData;
-    const { temp, feels_like, humidity } = main;
+    const { main, wind } = weatherData;
+    const { feels_like, humidity } = main;
     return (
         <div>
             <div className='weather-details-container'>
