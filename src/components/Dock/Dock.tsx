@@ -1,4 +1,4 @@
-import React,{ useContext, useEffect, useState} from 'react';
+import React,{ useContext} from 'react';
 import { store } from '../../App';
 import './Dock.scss';
 import { finder,
@@ -16,7 +16,7 @@ import { finder,
 
 const Dock = () => {
     const [ state, dispatch ] = useContext(store);
-    const [ isDock, setIsDock ] = useState(false);
+    // const [ isDock, setIsDock ] = useState(false);
 
 
     const openWallpaper = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -53,12 +53,12 @@ const Dock = () => {
         
         dispatch({type: 'finder/OPEN'});
     };
-    useEffect(() => {
-        setIsDock((prev) => !prev)
-    }, [state.weatherWindow.weatherStretch]);
+    // useEffect(() => {
+    //     setIsDock((prev) => !prev)
+    // }, [state.weatherWindow.weatherStretch]);
   return (
     <>
-        <div className={`dock ${isDock ? 'dock-hide' : ''}`}>
+        <div className={`dock`}>
             <div
                 className={`dock-item ${state.dockItem === 0 ? 'hovered' : ""}
                 ${state.dockItem === 1 ? 'distance-1' 

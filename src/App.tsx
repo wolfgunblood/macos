@@ -5,7 +5,7 @@ import Dock from './components/Dock/Dock.tsx';
 // import VSCode from './components/VSCode/VSCode.tsx';
 import WallpaperMenu from './components/WallpaperMenu/WallpaperMenu.tsx';
 import Weather from './components/Weather/Weather.tsx';
-import Finder from './components/Finder/Finder.tsx';
+// import Finder from './components/Finder/Finder.tsx';
 import './App.css';
 import { ChakraProvider } from '@chakra-ui/react';
 import reducer from './reducers/reducer';
