@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './VSCode.scss';
 import { store } from '../../App';
-import { ReactComponent as Close } from '../../resources/images/svg/close.svg';
-import { ReactComponent as Minimize } from '../../resources/images/svg/minimize.svg';
-import { ReactComponent as Stretch } from '../../resources/images/svg/stretch.svg';
+import { GrFormClose, GrFormSubtract } from "react-icons/gr";
+import { CgExpand } from "react-icons/cg";
 import Draggable from 'react-draggable';
 
 const VSCode = () => {
@@ -24,15 +23,15 @@ const VSCode = () => {
                 <section className='handle' id='vscode-handle'>
                     <div className='dots'>
                         <div className='dot red' onClick={closeWindow}>
-                            <Close className='close' />
+                            <GrFormClose className='close' />
                         </div>
 
-                        <div className='dot yellow' onClick={() => { }}>
-                            <Minimize className='minimize' />
+                        <div className='dot yellow' >
+                            <GrFormSubtract className='minimize' />
                         </div>
 
-                        <div className='dot green' onClick={() => { }}>
-                            <Stretch className='stretch' />
+                        <div className='dot green' >
+                            <CgExpand className='stretch' />
                         </div>
                     </div>
                     <h1>
