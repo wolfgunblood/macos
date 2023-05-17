@@ -1,7 +1,6 @@
-import React, { Children, useEffect, useState, useContext, MouseEvent} from 'react';
+import React, { useContext} from 'react';
 import { store } from '../../App';
 import "./Page.scss";
-import wallpapers from '../../utils/helpers/wallpapers';
 import openContextMenu from '../../utils/helpers/openContextMenu';
 import checkDropdown from '../../utils/helpers/checkDropdown';
 import checkSettings from '../../utils/helpers/checkSettings';
