@@ -7,7 +7,7 @@ const InputFields = () => {
 
   const [state, dispatch] = useContext(store);
 
-  const changeCity = (e) => {
+  const changeCity = (e:  React.FormEvent<HTMLElement>) => {
     e.preventDefault();
     setNewCity('');
     
