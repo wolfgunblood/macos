@@ -1,9 +1,7 @@
-import React, { useContext, useEffect, useState,MouseEvent } from 'react';
+import React from 'react';
 import './WindowNav.scss';
-import { store } from '../../App';
 import { GrFormClose, GrFormSubtract } from "react-icons/gr";
 import { CgExpand } from "react-icons/cg";
-import Draggable from 'react-draggable';
 
 const WindowNav = ({ handleName, name, isClose, setIsClose }) => {
     // console.log(handleName);
