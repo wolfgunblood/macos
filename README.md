@@ -4,7 +4,7 @@
 <p align="center">A MacOS Clone built in TypeScript React with SASS and Framer Motion.</p>
 
 ![](https://img.shields.io/badge/contributors-1-white)
-![](https://img.shields.io/badge/commits-18-white)
+![](https://img.shields.io/badge/commits-60-white)
 ![](https://img.shields.io/badge/test%20coverage-96%25-brightgreen)
 ![](https://img.shields.io/badge/open%20source-true-brightgreen)
 
