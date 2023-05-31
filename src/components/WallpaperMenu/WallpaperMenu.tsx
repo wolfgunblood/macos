@@ -140,11 +140,25 @@ const WallpaperMenu = () => {
 
     useEffect(() => {
         const wallpaperMenu = document.getElementById("wallpaper-menu");
+        const dot1 = document.getElementById("dot1");
+        const dot2 = document.getElementById("dot2");
+        const dot3 = document.getElementById("dot3");
+        const dots = [dot1, dot2, dot3];
+        
+        const dot1w = document.getElementById("dot1w");
+        const dot2w = document.getElementById("dot2w");
+        const dot3w = document.getElementById("dot3w");
+        const dotsw = [dot1w, dot2w, dot3w];
         if (state.float.wallpaperBoard && wallpaperMenu) {
             wallpaperMenu.style.zIndex = "8";
+            dots.forEach((dot) => dot!.classList.remove("notActive-mode"));
+            dotsw.forEach((dot) => dot!.classList.add("notActive-mode"));
+
         } else {
             if (wallpaperMenu)
-                wallpaperMenu.style.zIndex = "4";
+            wallpaperMenu.style.zIndex = "4";
+            dots.forEach((dot) => dot!.classList.add("notActive-mode"));
+            dotsw.forEach((dot) => dot!.classList.remove("notActive-mode"));
 
         }
     }, [state.float.wallpaperBoard, state.float.weatherBoard]);
@@ -170,16 +184,16 @@ const WallpaperMenu = () => {
                 onClick={floatWindow}
             >
                 <section className='handle' id='wallpaper-handle'>
-                    <div className='dots'>
-                        <div className='dot red' onClick={closeWindow}>
+                    <div className='dots1' >
+                        <div className='dot red' id='dot1' onClick={closeWindow}>
                             <GrFormClose className='close' />
                         </div>
 
-                        <div className='dot yellow' onClick={minimizeWindow}>
+                        <div className='dot yellow' id='dot2' onClick={minimizeWindow}>
                             <GrFormSubtract className='minimize' />
                         </div>
 
-                        <div className='dot green' onClick={stretchWindow}>
+                        <div className='dot green' id='dot3' onClick={stretchWindow}>
                             <CgExpand className='stretch' />
                         </div>
                     </div>

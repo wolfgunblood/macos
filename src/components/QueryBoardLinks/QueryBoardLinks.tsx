@@ -43,13 +43,13 @@ const stretchWindow = (e : React.MouseEvent<HTMLElement>) => {
   return (
     <div className='links'>
       <div className='dots'>
-        <div className='dot red' onClick ={closeWindow}>
+        <div className='dot red' id='dot1w' onClick ={closeWindow}>
           < GrFormClose className="close" />
         </div>
-        <div className='dot yellow' onClick ={minimizeWindow}>
+        <div className='dot yellow' id='dot2w' onClick ={minimizeWindow}>
           <GrFormSubtract className="minimize" />
         </div>
-        <div className='dot green' onClick ={stretchWindow}>
+        <div className='dot green' id='dot3w' onClick ={stretchWindow}>
           <CgExpand className="stretch" />
         </div>
       </div>
