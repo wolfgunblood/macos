@@ -2,10 +2,10 @@ import React, { useEffect, useContext } from 'react';
 import "./BootingLoader.scss";
 import { motion } from 'framer-motion';
 import { store } from '../../App';
-import AppleLogo from "../../resources/images/apple.png"
+import AppleLogo from "../../resources/images/apple-dust-apple-apple-dust-dust.gif"
 
 const BootingLoader = () => {
-    const { state, dispatch } = useContext(store);
+    const [ state, dispatch ] = useContext(store);
     
     useEffect(() => {
 
