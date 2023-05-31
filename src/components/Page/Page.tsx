@@ -4,6 +4,7 @@ import "./Page.scss";
 import openContextMenu from '../../utils/helpers/openContextMenu';
 import checkDropdown from '../../utils/helpers/checkDropdown';
 import checkSettings from '../../utils/helpers/checkSettings';
+import BootingLoader from '../BootingLoader/BootingLoader';
 // import img from '../../assets/44.jpg';
 
 
@@ -54,7 +55,7 @@ const Page = ({children} : any) => {
     >
       {/* {console.log(children)} */}
       {/* {console.log(state.settings.wallpaper.name)} */}
-      
+      <BootingLoader />
       {children}
     </div>
   )
