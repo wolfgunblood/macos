@@ -56,11 +56,11 @@ const NavBar = () => {
       <div className='nav-bar'>
 
         <div className='logo section'  >
-          <AiOutlineApple size={18 } id='logo' onClick={dispatchAction} />
+          <AiOutlineApple size={18 } id='logo' onClick={dispatchAction}/>
           {/* <img src="" alt="Apple Logo" /> */}
           <div
             className={`${state.section === "logo" ? "selected-logo" : "not-selected"
-              }`}
+              } cur`}
           >
           </div>
           {state.section === "logo" ? <DropdownContent /> : null}

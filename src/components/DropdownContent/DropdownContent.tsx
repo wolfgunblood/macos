@@ -29,15 +29,16 @@ const DropdownContent = () => {
         }`}
     >
         {content.map((item) => {
-            if(item.name === "divider") return <div  className='divider dd'/>;
+            if(item.name === "divider") return <div  className='divider dd hover-disabled'/>;
 
             return (
                 <div
                     className={`dropdown-item dd ${
                         state.section === item.name
                         ? "dd-active"
-                        : ""
-                    }`}
+                        : ""}
+                        ${item.available ? "hover-active" : "hover-disabled"}
+                    `}
 
                     style={{ color: item.available ? "white" : "rgba(255,255,255,0.5)" } }
                     onClick={(e) => {
