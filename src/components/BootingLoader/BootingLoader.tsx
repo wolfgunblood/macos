@@ -2,7 +2,7 @@ import { useEffect, useContext } from 'react';
 import "./BootingLoader.scss";
 import { motion } from 'framer-motion';
 import { store } from '../../App';
-import AppleLogo from "../../resources/images/apple-dust-apple-apple-dust-dust.gif"
+import AppleLogo from "../../resources/images/loading.gif"
 
 const BootingLoader = () => {
     const [ _state, _dispatch ] = useContext(store);

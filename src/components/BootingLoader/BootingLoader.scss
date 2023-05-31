@@ -28,8 +28,8 @@
     animation: 0.1s ease-out 0s 1 load !important;
 
     .booting-loader-logo {
-        height: 300px;
-        width: 300px;
+        height: 150px;
+        width: 150px;
         -webkit-user-drag: none;
         pointer-events: none;
         justify-self: flex-start;
@@ -38,7 +38,7 @@
     }
 
     .bar-container {
-        margin-top: 37px;
+        margin-top: 45px;
         padding: 0;
         position: relative;
 
