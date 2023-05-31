@@ -87,7 +87,7 @@ const WallpaperMenu = () => {
         [ventura, preview_ventura, "Ventura"]
     ];
     // const preview_wallPaper = [preview_bigsur,preview_bigsurgraphic,preview_catalina,preview_dome,preview_lake,preview_iridescence,preview_mojave,preview_monterey,preview_peak,preview_solargrad,preview_thedesert,preview_ventura ];
-    const changeWallper = (e: React.MouseEvent<HTMLElement>, wally : string[]) => {
+    const changeWallper = (e: React.MouseEvent<HTMLElement>, wally: string[]) => {
         e.preventDefault();
 
         // console.log(e);
@@ -143,8 +143,8 @@ const WallpaperMenu = () => {
         if (state.float.wallpaperBoard && wallpaperMenu) {
             wallpaperMenu.style.zIndex = "8";
         } else {
-            if(wallpaperMenu)
-            wallpaperMenu.style.zIndex = "4";
+            if (wallpaperMenu)
+                wallpaperMenu.style.zIndex = "4";
 
         }
     }, [state.float.wallpaperBoard, state.float.weatherBoard]);
@@ -157,7 +157,7 @@ const WallpaperMenu = () => {
 
     return (
         <Draggable handle="#wallpaper-handle">
-            
+
             <div
                 className={`wallpaper-menu wallp 
                         ${state.wallpaperWindow.wallpaperOpen ? 'openWallpaper' : ''}
@@ -184,9 +184,9 @@ const WallpaperMenu = () => {
                         </div>
                     </div>
                     <div className='title-wallpaper'>
-                    <h1>
-                        Wallpaper
-                    </h1>
+                        <h1>
+                            Wallpaper
+                        </h1>
                     </div>
                 </section>
 
@@ -238,14 +238,13 @@ const WallpaperMenu = () => {
 
                                 return (
                                     <div className='item-container'>
+                                            <img
+                                                src={wally[0]}
+                                                alt="standalone wallpaper"
+                                                className="image-wrapper iw"
+                                                onClick={(e) => changeWallper(e, wally)}
 
-                                        <img
-                                            src={wally[0]}
-                                            alt="standalone wallpaper"
-                                            className="image-wrapper iw"
-                                            onClick={(e) => changeWallper(e, wally)}
-
-                                        />
+                                            />
                                         <h2>{wally[1]}</h2>
                                     </div>
 
