@@ -16,7 +16,8 @@ const SettingsDropdown = () => {
 
   const changeColor = (e: React.MouseEvent<HTMLButtonElement>) => {
     const target = e.target as HTMLButtonElement;
-
+    
+    dispatch({type :"color/CHANGE", payload: target.id});
     updateSysColor(target.id);
   }
 

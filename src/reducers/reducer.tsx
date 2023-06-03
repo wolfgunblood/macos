@@ -258,6 +258,15 @@ const reducer: Reducer<storeType, AnyAction> = (state = sampleStore, action) => 
                 city : action.payload,
                 };
             return changeCity;
+
+        case "color/CHANGE":
+            
+            // eslint-disable-next-line no-case-declarations
+            const changeColor = {
+                ...state,
+                currentColor : action.payload,
+                };
+            return changeColor;
         
             default:
                 console.log("Error no dispatch found in Reducer");
