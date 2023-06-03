@@ -59,6 +59,7 @@ interface Weather {
     float: Float;
     finderCloseOpen: boolean;
     city: string;
+    currentColor: string,
   }
 
 export default storeType;

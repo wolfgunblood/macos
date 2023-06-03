@@ -54,6 +54,7 @@ const sampleStore : storeType ={
     },
     finderCloseOpen: false,
     city: "New York",
+    currentColor: "lightblue",
     
 }
 
