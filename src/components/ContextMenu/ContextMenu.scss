@@ -33,7 +33,7 @@
         border-radius: 4px;
 
         &:hover{
-            background-color: lightblue;
+            background-color: var(--sys-color);
             color: black !important;
             cursor: pointer;
         }

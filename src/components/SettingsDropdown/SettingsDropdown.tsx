@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import './SettingsDropdown.scss';
 import { store } from '../../App';
 import { MdWifiTethering, MdAnimation } from "react-icons/md";
+import updateSysColor from '../../utils/helpers/updateSysColor';
 
 const SettingsDropdown = () => {
   const [state, dispatch] = useContext(store);
@@ -12,6 +13,12 @@ const SettingsDropdown = () => {
     dispatch({ type: 'wallpaper/OPEN' });
 
   };
+
+  const changeColor = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const target = e.target as HTMLButtonElement;
+
+    updateSysColor(target.id);
+  }
 
   return (
     <div
@@ -48,54 +55,55 @@ const SettingsDropdown = () => {
       <section className='sys-colors set'>
         System Color
         <div className='colors set'>
-          <div
+          <button
             className='color orangey set'
-            id='orange'
+            id='orangey'
+            onClick={changeColor}
           >
             { }
-          </div>
-          <div
+          </button>
+          <button
             className='color greeny set'
-            id='green'
+            id='greeny'
+            onClick={changeColor}
           >
             { }
-          </div>
-          <div
+          </button>
+          <button
             className='color bluey set'
-            id='blue'
+            id='bluey'
+            onClick={changeColor}
           >
             { }
-          </div>
-          <div
+          </button>
+          <button
             className='color pinky set'
-            id='pink'
+            id='pinky'
+            onClick={changeColor}
           >
             { }
-          </div>
-          <div
-            className='color blacky set'
-            id='black'
-          >
-            { }
-          </div>
-          <div
+          </button>
+          <button
             className='color whitey set'
-            id='white'
+            id='whitey'
+            onClick={changeColor}
           >
             { }
-          </div>
-          <div
+          </button>
+          <button
             className='color greyy set'
-            id='grey'
+            id='greyy'
+            onClick={changeColor}
           >
             { }
-          </div>
-          <div
+          </button>
+          <button
             className='color yellowy set'
-            id='yellow'
+            id='yellowy'
+            onClick={changeColor}
           >
             { }
-          </div>
+          </button>
         </div>
       </section>
 
