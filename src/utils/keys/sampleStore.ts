@@ -31,7 +31,7 @@ const sampleStore : storeType ={
         },
     },
     wallpaperWindow:{
-        wallpaperClose: false,
+        wallpaperClose: true,
         wallpaperOpen: true,
         wallpaperMinimize: false,
         wallpaperStretch: false,
