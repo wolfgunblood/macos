@@ -1,13 +1,14 @@
 @keyframes identifier {
-    0%{
+    0% {
         color: black;
     }
-    100%{
+
+    100% {
         color: gray;
     }
 }
 
-.booting-loader{
+.booting-loader {
     background-color: black;
     width: 100vw;
     height: 100vh;
@@ -22,7 +23,7 @@
     justify-content: center;
 }
 
-.boot{
+.boot {
     transition: 1s opacity;
     cursor: none;
     animation: 0.1s ease-out 0s 1 load !important;
@@ -76,8 +77,8 @@
     display: flex;
     transition: 1s all;
     cursor: none;
-    
-    .booting-loader-logo{
+
+    .booting-loader-logo {
         visibility: hidden;
         opacity: 0;
         width: 0px;
@@ -86,7 +87,7 @@
         margin-top: 7px;
         margin-right: 12px;
     }
-    
+
     .bar-container {
         opacity: 0;
         visibility: hidden;
@@ -96,7 +97,7 @@
 
         .bar-background {
             opacity: 0;
-        visibility: hidden;
+            visibility: hidden;
             margin: 0;
             background-color: #424242;
             border: none;
@@ -107,7 +108,7 @@
 
         .bar {
             opacity: 0;
-        visibility: hidden;
+            visibility: hidden;
             position: absolute;
             height: 4px;
             width: 0px;

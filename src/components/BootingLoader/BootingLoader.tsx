@@ -13,7 +13,7 @@ const BootingLoader = () => {
             const bootUpWindow = document.getElementById("boot");
             bootUpWindow!.classList.remove("booting-loader");
             bootUpWindow!.classList.add("vanished");
-        },3350);
+        },4500);
         // setTimeout(() => {
         //     dispatch({
         //         type: "booting/FINISH",
@@ -41,7 +41,7 @@ const BootingLoader = () => {
                         variants={animations}
                         initial="inittal"
                         animate="animate"
-                        transition={{ ease: "easeInOut",duration: 2.1,delay: 0.4 }}
+                        transition={{ ease: "easeInOut",duration: 2.5,delay: 0.6 }}
                     >
 
                     </motion.div>
