@@ -3,6 +3,7 @@ import './SettingsDropdown.scss';
 import { store } from '../../App';
 import { MdWifiTethering, MdAnimation } from "react-icons/md";
 import updateSysColor from '../../utils/helpers/updateSysColor';
+import { AiFillCheckCircle,AiOutlineCheckCircle } from "react-icons/ai";
 
 const SettingsDropdown = () => {
   const [state, dispatch] = useContext(store);
@@ -16,7 +17,7 @@ const SettingsDropdown = () => {
 
   const changeColor = (e: React.MouseEvent<HTMLButtonElement>) => {
     const target = e.target as HTMLButtonElement;
-    
+
     dispatch({type :"color/CHANGE", payload: target.id});
     updateSysColor(target.id);
   }
@@ -61,49 +62,49 @@ const SettingsDropdown = () => {
             id='orangey'
             onClick={changeColor}
           >
-            { }
+            {state.currentColor === 'orangey' ? <AiOutlineCheckCircle color={"#333333"} /> : null  }
           </button>
           <button
             className='color greeny set'
             id='greeny'
             onClick={changeColor}
           >
-            { }
+            {state.currentColor === 'greeny' ? <AiOutlineCheckCircle  color={"#333333"}/> : null   }
           </button>
           <button
             className='color bluey set'
             id='bluey'
             onClick={changeColor}
           >
-            { }
+            { state.currentColor === 'bluey' ? <AiOutlineCheckCircle color={"#333333"} /> : null }
           </button>
           <button
             className='color pinky set'
             id='pinky'
             onClick={changeColor}
           >
-            { }
+            { state.currentColor === 'pinky' ? <AiOutlineCheckCircle color={"#333333"} /> : null }
           </button>
           <button
             className='color whitey set'
             id='whitey'
             onClick={changeColor}
           >
-            { }
+            { state.currentColor === 'whitey' ? <AiOutlineCheckCircle color={"#333333"} /> : null }
           </button>
           <button
             className='color greyy set'
             id='greyy'
             onClick={changeColor}
           >
-            { }
+            { state.currentColor === 'greyy' ? <AiOutlineCheckCircle /> : null }
           </button>
           <button
             className='color yellowy set'
             id='yellowy'
             onClick={changeColor}
           >
-            { }
+            { state.currentColor === 'yellowy' ? <AiOutlineCheckCircle color={"#333333"} /> : null }
           </button>
         </div>
       </section>
