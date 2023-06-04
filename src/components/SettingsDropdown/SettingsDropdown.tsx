@@ -3,7 +3,7 @@ import './SettingsDropdown.scss';
 import { store } from '../../App';
 import { MdWifiTethering, MdAnimation } from "react-icons/md";
 import updateSysColor from '../../utils/helpers/updateSysColor';
-import { AiFillCheckCircle,AiOutlineCheckCircle } from "react-icons/ai";
+import { AiOutlineCheckCircle } from "react-icons/ai";
 
 const SettingsDropdown = () => {
   const [state, dispatch] = useContext(store);
