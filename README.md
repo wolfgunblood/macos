@@ -19,11 +19,14 @@
 ## Short Description
 This project is a macOS clone built using React and TypeScript. It aims to recreate the familiar and intuitive user interface of macOS within a web application. The combination of React's component-based architecture, TypeScript's type safety, and the sleek design of macOS provides a seamless and responsive user experience. Users will be able to interact with a macOS-like interface, including windows, menus, and toolbars, offering cross-platform compatibility and the convenience of a familiar operating system within their web browser.
 
+
 ## 🔴 Demo
 🧪 [Live Demo](https://wolfgunblood.github.io/macos/) available. Click "Live Demo" to open it.
 
 ## Showcase
 You can see images and a GIF of the project in user interaction below. 
+
+[Main Page](./Screenshot1.png) 
 
 ## Features
 - ✔️ Component-Based Architecture
