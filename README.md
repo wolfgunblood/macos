@@ -26,7 +26,9 @@ This project is a macOS clone built using React and TypeScript. It aims to recre
 ## Showcase
 You can see images and a GIF of the project in user interaction below. 
 
-![Main Page](./Screenshot1.png) 
+![Weather Page](./Screenshot1.png) 
+![Wallpaper Page](./Screenshot2.png) 
+![Drop Down](./Screenshot3.png) 
 
 ## Features
 - ✔️ Component-Based Architecture
