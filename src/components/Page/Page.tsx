@@ -55,7 +55,7 @@ const Page = ({children} : any) => {
     >
       {/* {console.log(children)} */}
       {/* {console.log(state.settings.wallpaper.name)} */}
-      <BootingLoader />
+      {/* <BootingLoader /> */}
       {children}
     </div>
   )
