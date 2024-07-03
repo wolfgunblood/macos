@@ -4,7 +4,7 @@ import "./Page.scss";
 import openContextMenu from '../../utils/helpers/openContextMenu';
 import checkDropdown from '../../utils/helpers/checkDropdown';
 import checkSettings from '../../utils/helpers/checkSettings';
-import BootingLoader from '../BootingLoader/BootingLoader';
+// import BootingLoader from '../Booting/Loader/BootingLoader';
 // import img from '../../assets/44.jpg';
 
 
